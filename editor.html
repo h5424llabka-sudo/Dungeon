@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ローグライク アセットエディタ</title>
+  <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+  <div class="editor-container">
+    <div class="sidebar">
+      <h2>Asset Editor</h2>
+      <div class="tab-btn active" data-tab="village">村マップ設定</div>
+      <div class="tab-btn" data-tab="dungeon">ダンジョン設定</div>
+      <div class="tab-btn" data-tab="characters">キャラ・アイテム</div>
+      <button id="btn-save" class="btn btn-save">設定を保存 (Save)</button>
+      <div id="save-msg" class="save-msg"></div>
+    </div>
+    
+    <div class="main-content">
+      <!-- Village Editor -->
+      <div id="tab-village" class="tab-content active">
+        <h3>村マップエディタ</h3>
+        <p>マップをクリックして配置。左のパレットから選択してください。</p>
+        <div class="village-editor-layout">
+          <div class="palette">
+            <h4>ブラシ</h4>
+            <div id="palette-items"></div>
+            <h4>NPC / 施設</h4>
+            <div id="palette-npcs"></div>
+            <hr>
+            <h4>選択中のブラシ画像設定</h4>
+            <div>
+              <div id="brush-img" class="asset-picker" data-kind="map"></div>
+            </div>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="village-canvas" width="960" height="640"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dungeon Editor -->
+      <div id="tab-dungeon" class="tab-content">
+        <h3>ダンジョン設定</h3>
+        <p>自動生成されるダンジョンで使う画像を指定します。</p>
+        <div class="form-grid">
+          <label>床 (Floor)</label>
+          <div id="dung-floor" class="asset-picker" data-kind="map"></div>
+          <label>壁 (Wall)</label>
+          <div id="dung-wall" class="asset-picker" data-kind="map"></div>
+          <label>通路 (Corridor)</label>
+          <div id="dung-corridor" class="asset-picker" data-kind="map"></div>
+          <label>水 (Water)</label>
+          <div id="dung-water" class="asset-picker" data-kind="map"></div>
+          <label>階段 (Stairs)</label>
+          <div id="dung-stairs" class="asset-picker" data-kind="map"></div>
+          <label>扉 (Door)</label>
+          <div id="dung-door" class="asset-picker" data-kind="map"></div>
+          <label>罠 (Trap)</label>
+          <div id="dung-trap" class="asset-picker" data-kind="map"></div>
+        </div>
+      </div>
+
+      <!-- Characters & Items Editor -->
+      <div id="tab-characters" class="tab-content">
+        <h3>キャラクター・アイテム画像設定</h3>
+        <div class="form-grid">
+          <label>プレイヤー (Player)</label>
+          <div id="char-player" class="asset-picker" data-kind="character"></div>
+        </div>
+        <hr>
+        <h4>敵キャラクター</h4>
+        <div id="enemy-list" class="form-grid"></div>
+        <hr>
+        <h4>アイテム</h4>
+        <div id="item-list" class="form-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- スプライトピッカー モーダル -->
+  <div id="picker-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>スプライトを選択</h3>
+        <button id="btn-close-modal" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-controls">
+        <select id="modal-folder-select"><option value="">--フォルダ--</option></select>
+        <select id="modal-img-select"><option value="">--画像--</option></select>
+        <span class="picker-instruction" id="picker-inst">対象のマスをクリックしてください</span>
+      </div>
+      <div class="modal-canvas-wrap">
+        <canvas id="picker-canvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Type="module" so we can import constants -->
+  <script type="module" src="js/editor.js"></script>
+</body>
+</html>
