@@ -120,6 +120,7 @@ export function isIdentified(id) {
 }
 
 export function getDisplayName(item) {
+  if (item.identified) return item.name;
   if (item.type === ITEM_TYPE.WEAPON || item.type === ITEM_TYPE.ARMOR || item.type === ITEM_TYPE.FOOD || item.type === ITEM_TYPE.GOLD) {
     return item.name;
   }
@@ -170,17 +171,17 @@ export function createItemByType(type, floor = 1) {
     }
     case ITEM_TYPE.GRASS: {
       const base = weighted(GRASSES);
-      return { ...base, type, identified: isIdentified(base.id), quantity: 1 };
+      return { ...base, type, identified: true, quantity: 1 };
     }
     case ITEM_TYPE.SCROLL: {
       const base = weighted(SCROLLS);
-      return { ...base, type, identified: isIdentified(base.id), quantity: 1 };
+      return { ...base, type, identified: true, quantity: 1 };
     }
     case ITEM_TYPE.STAFF: {
       const base = weighted(STAFFS);
       const [minC, maxC] = base.charges;
       const charges = minC + Math.floor(Math.random() * (maxC - minC + 1));
-      return { ...base, type, charges, identified: isIdentified(base.id), quantity: 1 };
+      return { ...base, type, charges, identified: true, quantity: 1 };
     }
     case ITEM_TYPE.FOOD: {
       const base = weighted(FOODS);
@@ -188,7 +189,7 @@ export function createItemByType(type, floor = 1) {
     }
     case ITEM_TYPE.POT: {
       const base = weighted(POTS);
-      return { ...base, type, identified: isIdentified(base.id), contents: [], quantity: 1 };
+      return { ...base, type, identified: true, contents: [], quantity: 1 };
     }
     case ITEM_TYPE.GOLD: {
       const amount = (5 + Math.floor(Math.random() * 20)) * floor;

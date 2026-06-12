@@ -128,8 +128,8 @@ export const GAME_STATE = {
 };
 
 // ダンジョン設定
-export const DUNGEON_MAX_FLOOR = 20;
-export const BOSS_FLOORS = [5, 10, 15, 20];
+export const DUNGEON_MAX_FLOOR = 15;
+export const BOSS_FLOORS = [5, 10, 15];
 
 // 戦闘定数
 export const BASE_CRIT_RATE  = 0.05;   // 5%
@@ -141,7 +141,7 @@ export const HUNGER_DAMAGE_TICK = 10; // 満腹度0のとき、この行動数�
 
 // 経験値テーブル（レベルアップに必要な累計Exp）
 export const EXP_TABLE = [
-  0, 20, 50, 100, 180, 300, 460, 670, 940, 1280, 1700
+  0, 10, 30, 60, 100, 150, 220, 310, 420, 550, 700, 900, 1150, 1450, 1800, 2200, 2650, 3200, 3800, 4500, 5300
 ];
 
 // インベントリ最大数

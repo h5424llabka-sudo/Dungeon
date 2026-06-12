@@ -161,3 +161,7 @@ h3 { margin-top: 0; border-bottom: 2px solid #5a5a8e; padding-bottom: 5px; }
 .picker-preview.character {
   width: 32px; height: 32px; /* preview only top-left or full? let's do 32x32 */
 }
+.btn-delete {
+  padding: 6px 12px; background: #8a3a3a; color: #fff; border: 1px solid #5a2a2a; border-radius: 4px; cursor: pointer;
+}
+.btn-delete:hover { background: #a54a4a; }

@@ -9,6 +9,25 @@ let config = {
   village: {}
 };
 
+let redrawVillageMap = null;
+const editorImgCache = {};
+
+function drawConfigImage(ctx, configObj, dx, dy, ts) {
+  if (!configObj || !configObj.src) return false;
+  let img = editorImgCache[configObj.src];
+  if (!img) {
+    img = new Image();
+    img.onload = () => { if(redrawVillageMap) redrawVillageMap(); };
+    img.src = configObj.src;
+    editorImgCache[configObj.src] = img;
+  }
+  if (img.complete && img.naturalWidth > 0) {
+    ctx.drawImage(img, configObj.sx || 0, configObj.sy || 0, 32, 32, dx, dy, ts, ts);
+    return true;
+  }
+  return false;
+}
+
 let villageMap = {
   width: 30, height: 20, tiles: []
 };
@@ -181,6 +200,7 @@ function updatePickerPreview(container) {
   if (valStr) {
     const obj = JSON.parse(valStr);
     html += `<div class="picker-preview" style="background-image: url('${obj.src}'); background-position: -${obj.sx}px -${obj.sy}px;"></div>`;
+    html += `<button class="btn-delete" style="margin-left: 8px;">削除</button>`;
   }
   container.innerHTML = html;
   container.querySelector('.btn-picker').onclick = () => {
@@ -199,27 +219,36 @@ function updatePickerPreview(container) {
       }
     }
   };
+
+  if (valStr) {
+    container.querySelector('.btn-delete').onclick = () => {
+      delete container.dataset.value;
+      saveTargetValue(container.id, null);
+      updatePickerPreview(container);
+    };
+  }
 }
 
 function saveTargetValue(id, configObj) {
   if (id.startsWith('dung-')) {
     const k = id.replace('dung-', '');
-    config.dungeon[k] = configObj;
+    if (configObj) config.dungeon[k] = configObj; else delete config.dungeon[k];
   } else if (id === 'char-player') {
-    config.characters.player = configObj;
+    if (configObj) config.characters.player = configObj; else delete config.characters.player;
   } else if (id.startsWith('enemy-')) {
     const k = id.replace('enemy-', '');
     if(!config.characters.enemies) config.characters.enemies = {};
-    config.characters.enemies[k] = configObj;
+    if (configObj) config.characters.enemies[k] = configObj; else delete config.characters.enemies[k];
   } else if (id.startsWith('item-')) {
     const k = id.replace('item-', '');
     if(!config.items) config.items = {};
-    config.items[k] = configObj;
+    if (configObj) config.items[k] = configObj; else delete config.items[k];
   } else if (id === 'brush-img') {
     const mapKey = getVillageConfigKey(currentBrush);
     if(mapKey) {
       if(!config.village) config.village = {};
-      config.village[mapKey] = configObj;
+      if (configObj) config.village[mapKey] = configObj; else delete config.village[mapKey];
+      if (redrawVillageMap) redrawVillageMap();
     }
   }
 }
@@ -304,25 +333,64 @@ function initVillageEditor() {
       for (let x = 0; x < villageMap.width; x++) {
         const val = villageMap.tiles[y][x];
         
-        ctx.fillStyle = '#445';
-        if (val === TILE.VILLAGE_FLOOR) ctx.fillStyle = '#565';
-        if (val === TILE.VILLAGE_WALL) ctx.fillStyle = '#343';
-        if (val === TILE.DUNGEON_GATE) ctx.fillStyle = '#833';
-        ctx.fillRect(x*ts, y*ts, ts, ts);
+        let cellCustom = villageMap.customImages && villageMap.customImages[y] && villageMap.customImages[y][x];
+
+        // 1. 床(ベース)を描画
+        let hasBase = false;
+        let baseImg = (cellCustom && cellCustom.base) ? cellCustom.base : (config.village && config.village.floor);
+        if (baseImg) {
+          hasBase = drawConfigImage(ctx, baseImg, x*ts, y*ts, ts);
+        }
+        if (!hasBase) {
+          ctx.fillStyle = '#565';
+          ctx.fillRect(x*ts, y*ts, ts, ts);
+        }
+
+        // 2. オブジェクトを描画
+        let drawnObj = false;
+        if (val !== TILE.VILLAGE_FLOOR) {
+          let objImg = null;
+          if (cellCustom && cellCustom.obj !== undefined) {
+            objImg = cellCustom.obj;
+          } else {
+            let key = getVillageConfigKey(val);
+            if (key && config.village && config.village[key]) {
+              objImg = config.village[key];
+            }
+          }
+
+          if (objImg) {
+            drawnObj = drawConfigImage(ctx, objImg, x*ts, y*ts, ts);
+          }
+          if (!drawnObj) {
+            ctx.fillStyle = '#445';
+            if (val === TILE.VILLAGE_WALL) ctx.fillStyle = '#343';
+            if (val === TILE.DUNGEON_GATE) ctx.fillStyle = '#833';
+            if (val === TILE.NPC_STORAGE) ctx.fillStyle = '#aa8855';
+            if (val === TILE.NPC_BANK) ctx.fillStyle = '#cccc44';
+            if (val === TILE.NPC_SHOP) ctx.fillStyle = '#cc66aa';
+            if (val === TILE.NPC_SHRINE) ctx.fillStyle = '#aa44ff';
+            ctx.fillRect(x*ts, y*ts, ts, ts);
+          }
+        }
         
-        ctx.strokeStyle = '#223';
+        ctx.strokeStyle = 'rgba(0,0,0,0.3)';
         ctx.strokeRect(x*ts, y*ts, ts, ts);
 
-        ctx.fillStyle = '#fff';
-        ctx.font = '12px sans-serif';
-        if (val === TILE.NPC_STORAGE) ctx.fillText('庫', x*ts+ts/4, y*ts+ts/2+4);
-        if (val === TILE.NPC_BANK) ctx.fillText('銀', x*ts+ts/4, y*ts+ts/2+4);
-        if (val === TILE.NPC_SHOP) ctx.fillText('店', x*ts+ts/4, y*ts+ts/2+4);
-        if (val === TILE.NPC_SHRINE) ctx.fillText('神', x*ts+ts/4, y*ts+ts/2+4);
-        if (val === TILE.DUNGEON_GATE) ctx.fillText('門', x*ts+ts/4, y*ts+ts/2+4);
+        if (!drawnObj && val !== TILE.VILLAGE_FLOOR && val !== TILE.VILLAGE_WALL) {
+          ctx.fillStyle = '#fff';
+          ctx.font = '12px sans-serif';
+          if (val === TILE.NPC_STORAGE) ctx.fillText('庫', x*ts+ts/4, y*ts+ts/2+4);
+          if (val === TILE.NPC_BANK) ctx.fillText('銀', x*ts+ts/4, y*ts+ts/2+4);
+          if (val === TILE.NPC_SHOP) ctx.fillText('店', x*ts+ts/4, y*ts+ts/2+4);
+          if (val === TILE.NPC_SHRINE) ctx.fillText('神', x*ts+ts/4, y*ts+ts/2+4);
+          if (val === TILE.DUNGEON_GATE) ctx.fillText('門', x*ts+ts/4, y*ts+ts/2+4);
+        }
       }
     }
   };
+
+  redrawVillageMap = drawMap;
 
   const paint = (e) => {
     const rect = canvas.getBoundingClientRect();
@@ -330,6 +398,24 @@ function initVillageEditor() {
     const y = Math.floor((e.clientY - rect.top) / 32);
     if(x >= 0 && x < villageMap.width && y >= 0 && y < villageMap.height) {
       villageMap.tiles[y][x] = currentBrush;
+
+      if (!villageMap.customImages) {
+        villageMap.customImages = Array.from({length: villageMap.height}, () => Array(villageMap.width).fill(null));
+      }
+      if (!villageMap.customImages[y][x]) {
+        villageMap.customImages[y][x] = {};
+      }
+      
+      const key = getVillageConfigKey(currentBrush);
+      const brushImg = (key && config.village && config.village[key]) ? JSON.parse(JSON.stringify(config.village[key])) : null;
+      
+      if (currentBrush === TILE.VILLAGE_FLOOR) {
+        villageMap.customImages[y][x].base = brushImg;
+        villageMap.customImages[y][x].obj = null;
+      } else {
+        villageMap.customImages[y][x].obj = brushImg;
+      }
+
       drawMap();
     }
   };

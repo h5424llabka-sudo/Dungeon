@@ -46,6 +46,9 @@ export const Assets = {
         }
       };
       collectSrcs(this.config);
+      if (this.villageMap && this.villageMap.customImages) {
+        collectSrcs(this.villageMap.customImages);
+      }
 
       const loadPromises = Array.from(srcsToLoad).map(src => this.loadImage(src));
       await Promise.all(loadPromises);

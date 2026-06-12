@@ -187,6 +187,7 @@ export class Village {
       isVillage: true,
       player: this.player,
       tiles: this.tiles,
+      customImages: Assets.villageMap?.customImages,
       enemies: [],
       items: [],
       visibleSet: new Set(),

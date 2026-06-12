@@ -1,0 +1,6244 @@
+{
+  "width": 30,
+  "height": 20,
+  "tiles": [
+    [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      14,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16
+    ],
+    [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      14,
+      14,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      12,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      11,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      16,
+      12,
+      16,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      16,
+      11,
+      16,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      16,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      13,
+      13,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      15,
+      15,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      15,
+      16
+    ],
+    [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16
+    ]
+  ],
+  "customImages": [
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 224,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 2560
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 224,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 2560
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 96,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 2592
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 2592
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 160
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 96,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 96,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/キャラチップ/pipo-charachip003.png",
+          "sx": 32,
+          "sy": 0
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/キャラチップ/pipo-charachip005.png",
+          "sx": 32,
+          "sy": 0
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 2688
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 2688
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 96,
+          "sy": 2688
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 2688
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 2688
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 96,
+          "sy": 2688
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 2624
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 2624
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 2624
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 2688
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/キャラチップ/pipo-charachip002.png",
+          "sx": 0,
+          "sy": 64
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 2720
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 32
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 32
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 832
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 2752
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 64
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 32,
+          "sy": 64
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 864
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 192,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": null
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 704
+        }
+      }
+    ],
+    [
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 64,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 0,
+          "sy": 736
+        }
+      },
+      {
+        "base": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 160,
+          "sy": 0
+        },
+        "obj": {
+          "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+          "sx": 96,
+          "sy": 736
+        }
+      }
+    ]
+  ]
+}

@@ -225,12 +225,26 @@ class App {
       </div>
     `;
 
+    // ── アイテムアクションモーダル ──────────────────────────────
+    this.itemActionModal = el('div', { id: 'modal-item-action', class: 'screen hidden', style: 'position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index: 3000;' });
+    this.itemActionModal.innerHTML = `
+      <div style="background:var(--panel); padding:20px; border-radius:8px; width:300px; border:1px solid var(--border);">
+        <h3 id="item-action-name" style="margin-bottom:10px; color:#fff; text-align:center;">アイテム名</h3>
+        <p id="item-action-desc" style="font-size:14px; margin-bottom:20px; color:#ccc; line-height:1.4;">アイテムの説明がここに入ります。</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <button id="btn-item-use" class="btn btn-primary">使う</button>
+          <button id="btn-item-cancel" class="btn btn-secondary">キャンセル</button>
+        </div>
+      </div>
+    `;
+
     document.body.append(
       this.lobbyScreen,
       this.gachaScreen,
       this.dungeonScreen,
       this.gameOverScreen,
       this.clearScreen,
+      this.itemActionModal
     );
 
     this._bindEvents();
@@ -259,6 +273,7 @@ class App {
     $('btn-close-storage').onclick = () => { $('modal-storage').classList.add('hidden'); writeSave(this.saveData); };
     $('btn-close-bank').onclick = () => { $('modal-bank').classList.add('hidden'); writeSave(this.saveData); };
     $('btn-close-shop').onclick = () => { $('modal-shop').classList.add('hidden'); writeSave(this.saveData); };
+    $('btn-item-cancel').onclick = () => { this.itemActionModal.classList.add('hidden'); };
     
     // 銀行アクション
     $('btn-bank-deposit').onclick = () => {
@@ -836,11 +851,7 @@ class App {
             this._toast('村では使えません');
             return;
           }
-          if (['weapon','armor'].includes(item.type)) {
-            this.game.externalEquipItem(i);
-          } else {
-            this.game.externalUseItem(i);
-          }
+          this._showItemActionModal(item, i);
         };
 
         dropBtn.style.display = 'inline-block';
@@ -877,6 +888,25 @@ class App {
       span.textContent = b.icon + ' ' + b.name;
       div.appendChild(span);
     }
+  }
+
+  _showItemActionModal(item, index) {
+    const isEquip = ['weapon', 'armor'].includes(item.type);
+    $('item-action-name').textContent = getDisplayName(item);
+    $('item-action-desc').textContent = item.identified ? (item.desc || '説明がありません。') : '未識別のため効果は不明。';
+    
+    const useBtn = $('btn-item-use');
+    useBtn.textContent = isEquip ? '装備する' : '使う';
+    useBtn.onclick = () => {
+      this.itemActionModal.classList.add('hidden');
+      if (isEquip) {
+        this.game.externalEquipItem(index);
+      } else {
+        this.game.externalUseItem(index);
+      }
+    };
+    
+    this.itemActionModal.classList.remove('hidden');
   }
 
   _addMessage(text, color) {

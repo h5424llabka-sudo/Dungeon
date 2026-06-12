@@ -22,29 +22,36 @@ const MIN_LEAF_SIZE  = MIN_ROOM_SIZE + 2;
 const SPLIT_RATIO_MIN = 0.35;
 const SPLIT_RATIO_MAX = 0.65;
 
-function splitNode(node, depth = 0) {
-  if (depth > 6) return;
+function splitNodesToTarget(root, targetRooms) {
+  const leaves = [root];
+  while (leaves.length < targetRooms) {
+    const splittable = leaves.filter(n => n.h >= MIN_LEAF_SIZE * 2 || n.w >= MIN_LEAF_SIZE * 2);
+    if (splittable.length === 0) break;
+    
+    // 面積が最大のノードを分割する
+    splittable.sort((a, b) => (b.w * b.h) - (a.w * a.h));
+    const node = splittable[0];
+    
+    const canSplitH = node.h >= MIN_LEAF_SIZE * 2;
+    const canSplitV = node.w >= MIN_LEAF_SIZE * 2;
+    const splitH = canSplitH && (!canSplitV || Math.random() < 0.5);
 
-  const canSplitH = node.h >= MIN_LEAF_SIZE * 2;
-  const canSplitV = node.w >= MIN_LEAF_SIZE * 2;
-  if (!canSplitH && !canSplitV) return;
-
-  const splitH = canSplitH && (!canSplitV || Math.random() < 0.5);
-
-  if (splitH) {
-    const ratio = SPLIT_RATIO_MIN + Math.random() * (SPLIT_RATIO_MAX - SPLIT_RATIO_MIN);
-    const splitY = Math.floor(node.h * ratio);
-    node.left  = new BSPNode(node.x, node.y,          node.w, splitY);
-    node.right = new BSPNode(node.x, node.y + splitY, node.w, node.h - splitY);
-  } else {
-    const ratio = SPLIT_RATIO_MIN + Math.random() * (SPLIT_RATIO_MAX - SPLIT_RATIO_MIN);
-    const splitX = Math.floor(node.w * ratio);
-    node.left  = new BSPNode(node.x,          node.y, splitX,          node.h);
-    node.right = new BSPNode(node.x + splitX, node.y, node.w - splitX, node.h);
+    if (splitH) {
+      const ratio = SPLIT_RATIO_MIN + Math.random() * (SPLIT_RATIO_MAX - SPLIT_RATIO_MIN);
+      const splitY = Math.floor(node.h * ratio);
+      node.left  = new BSPNode(node.x, node.y,          node.w, splitY);
+      node.right = new BSPNode(node.x, node.y + splitY, node.w, node.h - splitY);
+    } else {
+      const ratio = SPLIT_RATIO_MIN + Math.random() * (SPLIT_RATIO_MAX - SPLIT_RATIO_MIN);
+      const splitX = Math.floor(node.w * ratio);
+      node.left  = new BSPNode(node.x,          node.y, splitX,          node.h);
+      node.right = new BSPNode(node.x + splitX, node.y, node.w - splitX, node.h);
+    }
+    
+    const idx = leaves.indexOf(node);
+    leaves.splice(idx, 1);
+    leaves.push(node.left, node.right);
   }
-
-  splitNode(node.left,  depth + 1);
-  splitNode(node.right, depth + 1);
 }
 
 function placeRooms(node, rooms) {
@@ -119,8 +126,9 @@ export function generateFloor(floor) {
   );
 
   // BSP生成
+  const targetRooms = 6 + Math.floor((floor - 1) / 5) * 2;
   const root  = new BSPNode(0, 0, MAP_WIDTH, MAP_HEIGHT);
-  splitNode(root);
+  splitNodesToTarget(root, targetRooms);
   const rooms = [];
   placeRooms(root, rooms);
 
@@ -170,10 +178,16 @@ export function generateFloor(floor) {
         enemySpawns.push(randomFloorInRoom(room, tiles));
       }
     }
-    // アイテム：3部屋に1個程度
-    if (Math.random() < 0.35) {
-      itemSpawns.push(randomFloorInRoom(room, tiles));
-    }
+  }
+
+  // アイテム：フロア全体で4〜5個（約10%の確率でアイテムが8〜12個落ちているフロアになる）
+  let totalItems = 4 + Math.floor(Math.random() * 2);
+  if (Math.random() < 0.1) {
+    totalItems = 8 + Math.floor(Math.random() * 5);
+  }
+  for (let k = 0; k < totalItems; k++) {
+    const room = rooms[Math.floor(Math.random() * rooms.length)];
+    itemSpawns.push(randomFloorInRoom(room, tiles));
   }
 
   // 罠を床にランダム配置（フロアが深いほど多い）
@@ -213,11 +227,26 @@ function shuffle(arr) {
  * @param {number} px - プレイヤーX
  * @param {number} py - プレイヤーY
  * @param {number} radius - 視野半径
+ * @param {object[]} rooms - フロアの部屋リスト
  * @returns {Set<string>} "x,y" の文字列集合
  */
-export function computeFOV(tiles, px, py, radius) {
+export function computeFOV(tiles, px, py, radius, rooms = null) {
   const visible = new Set();
   visible.add(`${px},${py}`);
+
+  // プレイヤーが部屋の中にいる場合、その部屋全体と周囲1マス（壁や入り口）を視界に入れる
+  if (rooms) {
+    const currentRoom = rooms.find(r => px >= r.x && px < r.x + r.w && py >= r.y && py < r.y + r.h);
+    if (currentRoom) {
+      for (let y = currentRoom.y - 1; y <= currentRoom.y + currentRoom.h; y++) {
+        for (let x = currentRoom.x - 1; x <= currentRoom.x + currentRoom.w; x++) {
+          if (x >= 0 && x < MAP_WIDTH && y >= 0 && y < MAP_HEIGHT) {
+            visible.add(`${x},${y}`);
+          }
+        }
+      }
+    }
+  }
 
   const ANGLES = 360;
   for (let a = 0; a < ANGLES; a++) {

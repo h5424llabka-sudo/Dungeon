@@ -11,7 +11,7 @@ export const ENEMY_DEFS = [
   // ── 初期（F1〜3）──────────────────────────────────
   {
     id: 'slime',     name: 'スライム',    icon: '🟢',
-    hp: 15, atk: 4,  def: 0, exp: 8,  goldMin: 3,  goldMax: 8,
+    hp: 15, atk: 4,  def: 0, exp: 1,  goldMin: 3,  goldMax: 8,
     minFloor: 1, maxFloor: 8,
     special: 'dissolve',    // アイテムを溶かす
     ai: 'normal', speed: 1,
@@ -19,7 +19,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'bat',       name: 'コウモリ',    icon: '🦇',
-    hp: 12, atk: 5,  def: 1, exp: 10, goldMin: 2,  goldMax: 6,
+    hp: 12, atk: 5,  def: 1, exp: 2, goldMin: 2,  goldMax: 6,
     minFloor: 1, maxFloor: 10,
     special: 'double_attack',
     ai: 'fast', speed: 2,
@@ -27,7 +27,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'goblin',    name: 'ゴブリン',    icon: '👺',
-    hp: 18, atk: 6,  def: 1, exp: 12, goldMin: 5,  goldMax: 15,
+    hp: 18, atk: 6,  def: 1, exp: 3, goldMin: 5,  goldMax: 15,
     minFloor: 1, maxFloor: 12,
     special: 'steal',       // アイテムを盗む
     ai: 'normal', speed: 1,
@@ -36,7 +36,7 @@ export const ENEMY_DEFS = [
   // ── 中盤（F4〜10）─────────────────────────────────
   {
     id: 'mage',      name: '魔道士',      icon: '🧙',
-    hp: 22, atk: 8,  def: 2, exp: 20, goldMin: 8,  goldMax: 20,
+    hp: 22, atk: 8,  def: 2, exp: 5, goldMin: 8,  goldMax: 20,
     minFloor: 4, maxFloor: 15,
     special: 'magic_bolt',  // 直線上に魔法を放つ
     ai: 'ranged', speed: 1,
@@ -44,7 +44,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'statue',    name: '石像兵',      icon: '🗿',
-    hp: 40, atk: 7,  def: 8, exp: 25, goldMin: 10, goldMax: 25,
+    hp: 40, atk: 7,  def: 8, exp: 8, goldMin: 10, goldMax: 25,
     minFloor: 5, maxFloor: 20,
     special: null,
     ai: 'slow', speed: 1,
@@ -52,7 +52,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'poison_frog', name: '毒ガエル',  icon: '🐸',
-    hp: 25, atk: 9,  def: 2, exp: 22, goldMin: 5,  goldMax: 12,
+    hp: 25, atk: 9,  def: 2, exp: 6, goldMin: 5,  goldMax: 12,
     minFloor: 5, maxFloor: 15,
     special: 'poison',
     ai: 'normal', speed: 1,
@@ -60,7 +60,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'thief_bird', name: '盗賊鳥',     icon: '🦅',
-    hp: 20, atk: 8,  def: 3, exp: 18, goldMin: 0,  goldMax: 0,
+    hp: 20, atk: 8,  def: 3, exp: 6, goldMin: 0,  goldMax: 0,
     minFloor: 6, maxFloor: 18,
     special: 'gold_steal',  // ゴールドを盗む
     ai: 'fast', speed: 2,
@@ -69,7 +69,7 @@ export const ENEMY_DEFS = [
   // ── 終盤（F11〜19）────────────────────────────────
   {
     id: 'dark_knight', name: '暗黒騎士',  icon: '🧟',
-    hp: 55, atk: 14, def: 8, exp: 45, goldMin: 15, goldMax: 40,
+    hp: 55, atk: 14, def: 8, exp: 15, goldMin: 15, goldMax: 40,
     minFloor: 11, maxFloor: 20,
     special: 'life_drain',
     ai: 'normal', speed: 1,
@@ -77,7 +77,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'witch',     name: '魔女',        icon: '🧝',
-    hp: 35, atk: 12, def: 3, exp: 40, goldMin: 20, goldMax: 50,
+    hp: 35, atk: 12, def: 3, exp: 12, goldMin: 20, goldMax: 50,
     minFloor: 12, maxFloor: 20,
     special: 'curse_equip',
     ai: 'ranged', speed: 1,
@@ -86,7 +86,7 @@ export const ENEMY_DEFS = [
   // ── ボス ──────────────────────────────────────────
   {
     id: 'boss_garmu', name: '魔将ガルム',  icon: '👹',
-    hp: 120, atk: 18, def: 10, exp: 200, goldMin: 100, goldMax: 200,
+    hp: 120, atk: 18, def: 10, exp: 50, goldMin: 100, goldMax: 200,
     minFloor: 5, maxFloor: 5, isBoss: true,
     special: 'summon_minion',
     ai: 'boss', speed: 1,
@@ -94,7 +94,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'boss_dragon', name: '水龍',       icon: '🐉',
-    hp: 200, atk: 22, def: 12, exp: 400, goldMin: 200, goldMax: 350,
+    hp: 200, atk: 22, def: 12, exp: 80, goldMin: 200, goldMax: 350,
     minFloor: 10, maxFloor: 10, isBoss: true,
     special: 'flood',
     ai: 'boss', speed: 1,
@@ -102,7 +102,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'boss_reaper', name: '死神',       icon: '💀',
-    hp: 180, atk: 28, def: 8, exp: 600, goldMin: 300, goldMax: 500,
+    hp: 180, atk: 28, def: 8, exp: 120, goldMin: 300, goldMax: 500,
     minFloor: 15, maxFloor: 15, isBoss: true,
     special: 'death_mark',
     ai: 'boss', speed: 1,
@@ -110,7 +110,7 @@ export const ENEMY_DEFS = [
   },
   {
     id: 'boss_final', name: '混沌の王',    icon: '☠️',
-    hp: 350, atk: 35, def: 15, exp: 1000, goldMin: 500, goldMax: 1000,
+    hp: 350, atk: 35, def: 15, exp: 200, goldMin: 500, goldMax: 1000,
     minFloor: 20, maxFloor: 20, isBoss: true,
     special: 'chaos_aura',
     ai: 'boss', speed: 1,
@@ -181,9 +181,10 @@ export class Enemy {
    * @param {object} player
    * @param {number[][]} tiles
    * @param {Enemy[]} enemies
+   * @param {object[]} rooms
    * @returns {{ type: string, dx?: number, dy?: number, ... }}
    */
-  decideAction(player, tiles, enemies) {
+  decideAction(player, tiles, enemies, rooms = null) {
     if (this.isDead()) return { type: 'none' };
     if (this.hasStatus('sleep') || this.hasStatus('stun')) {
       this.tickStatuses();
@@ -194,10 +195,24 @@ export class Enemy {
     const dx = player.x - this.x;
     const dy = player.y - this.y;
     const distChebyshev = Math.max(Math.abs(dx), Math.abs(dy));
-    const distManhattan = Math.abs(dx) + Math.abs(dy);
 
-    // 視野範囲内でアラート
-    if (distChebyshev <= 6 && !this.isAlerted) this.isAlerted = true;
+    // 索敵（アグロ）判定
+    if (!this.isAlerted) {
+      let inSameRoom = false;
+      if (rooms) {
+        const playerRoom = rooms.find(r => player.x >= r.x && player.x < r.x + r.w && player.y >= r.y && player.y < r.y + r.h);
+        if (playerRoom) {
+          const enemyInRoom = this.x >= playerRoom.x && this.x < playerRoom.x + playerRoom.w && this.y >= playerRoom.y && this.y < playerRoom.y + playerRoom.h;
+          if (enemyInRoom) inSameRoom = true;
+        }
+      }
+
+      // 同部屋にいる、もしくは通路で一定距離(4以下)に近づいた場合に発見
+      if (inSameRoom || distChebyshev <= 4) {
+        this.isAlerted = true;
+      }
+    }
+
     if (!this.isAlerted) return { type: 'idle' };
 
     if (this.specialCooldown > 0) this.specialCooldown--;

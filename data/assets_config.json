@@ -1,0 +1,101 @@
+{
+  "dungeon": {
+    "corridor": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 64,
+      "sy": 1152
+    },
+    "floor": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 64,
+      "sy": 1152
+    },
+    "wall": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 96,
+      "sy": 1728
+    },
+    "stairs": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 192,
+      "sy": 1216
+    }
+  },
+  "characters": {
+    "enemies": {},
+    "player": {
+      "src": "assets/キャラチップ/pipo-charachip001.png",
+      "sx": 0,
+      "sy": 0
+    }
+  },
+  "items": {
+    "weapon": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 192,
+      "sy": 4160
+    },
+    "armor": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 224,
+      "sy": 4160
+    },
+    "grass": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 0,
+      "sy": 3936
+    },
+    "food": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 192,
+      "sy": 3904
+    },
+    "pot": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 32,
+      "sy": 3424
+    },
+    "gold": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 64,
+      "sy": 3968
+    },
+    "scroll": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 0,
+      "sy": 3904
+    }
+  },
+  "village": {
+    "wall": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 32,
+      "sy": 64
+    },
+    "floor": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 160,
+      "sy": 0
+    },
+    "gate": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 32,
+      "sy": 2592
+    },
+    "shrine": {
+      "src": "assets/MapChip/[Base]BaseChip_pipo.png",
+      "sx": 0,
+      "sy": 2720
+    },
+    "shop": {
+      "src": "assets/キャラチップ/pipo-charachip003.png",
+      "sx": 32,
+      "sy": 0
+    },
+    "bank": {
+      "src": "assets/キャラチップ/pipo-charachip005.png",
+      "sx": 32,
+      "sy": 0
+    }
+  }
+}

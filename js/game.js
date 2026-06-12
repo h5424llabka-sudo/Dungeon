@@ -126,7 +126,7 @@ export class Game {
   // -------------------------------------------------------
   _updateFOV() {
     this.visibleSet = computeFOV(
-      this.tiles, this.player.x, this.player.y, this.player.viewRadius
+      this.tiles, this.player.x, this.player.y, this.player.viewRadius, this.floorData?.rooms
     );
     for (const key of this.visibleSet) {
       this.exploredSet.add(key);
@@ -296,6 +296,9 @@ export class Game {
     const actual = target.takeDamage(damage);
     const critStr = isCrit ? '【会心！】' : '';
     this.addMessage(`${target.name}に${actual}ダメージ！${critStr}`);
+    
+    // 敵へのダメージ数値（白〜黄色）
+    this.renderer.addFloatText(target.x, target.y, actual.toString(), isCrit ? '#ffff55' : '#ffffff');
 
     // 武器特殊効果
     if (this.player.weapon?.special === 'burn') {
@@ -351,6 +354,7 @@ export class Game {
       case 'damage':
         this.player.hp -= 10;
         this.addMessage('ダメージ罠！ HP-10。');
+        this.renderer.addFloatText(this.player.x, this.player.y, '10', '#ff4444');
         break;
       case 'hunger':
         this.player.hunger = Math.max(0, this.player.hunger - 30);
@@ -504,7 +508,7 @@ export class Game {
     for (const enemy of this.enemies) {
       if (enemy.isDead()) continue;
 
-      const action = enemy.decideAction(this.player, this.tiles, this.enemies);
+      const action = enemy.decideAction(this.player, this.tiles, this.enemies, this.floorData?.rooms);
       this._resolveEnemyAction(enemy, action);
 
       // プレイヤーが死んでいたら即終了
@@ -539,6 +543,7 @@ export class Game {
           const { actual, deathResist } = this.player.takeDamage(damage);
           const critStr = isCrit ? '【会心！】' : '';
           this.addMessage(`${enemy.name}の攻撃！ ${actual}ダメージ。${critStr}`);
+          this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
           if (deathResist) this.addMessage('不屈の魂が発動！HP1で耐えた！', '#ffd700');
         }
         break;
@@ -549,6 +554,7 @@ export class Game {
         const { actual } = this.player.takeDamage(damage);
         this.player.addStatus('poison', action.duration);
         this.addMessage(`${enemy.name}の毒攻撃！ ${actual}ダメージ。毒になった。`);
+        this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
         break;
       }
 
@@ -558,9 +564,11 @@ export class Game {
         if (this.player.armor?.special === 'reflect' && Math.random() < 0.15) {
           const reflected = enemy.takeDamage(action.dmg);
           this.addMessage(`魔法が反射した！ ${enemy.name}に${reflected}ダメージ！`);
+          this.renderer.addFloatText(enemy.x, enemy.y, reflected.toString(), '#ffffff');
         } else {
           this.player.hp -= actual;
           this.addMessage(`${enemy.name}の魔法弾！ ${actual}ダメージ。`);
+          this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
         }
         break;
       }
@@ -588,6 +596,8 @@ export class Game {
         const { actual } = this.player.takeDamage(damage);
         enemy.hp = Math.min(enemy.hpMax, enemy.hp + Math.floor(actual / 2));
         this.addMessage(`${enemy.name}の生命吸収！ ${actual}ダメージ。`);
+        this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
+        this.renderer.addFloatText(enemy.x, enemy.y, `+${Math.floor(actual / 2)}`, '#44ff44');
         break;
       }
 
@@ -614,6 +624,7 @@ export class Game {
         this.player.addStatus('poison', 3);
         this.player.hunger = Math.max(0, this.player.hunger - 20);
         this.addMessage(`混沌の王の混沌オーラ！ ${actual}ダメージ！毒・空腹！`, '#ff0044');
+        this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
         break;
       }
     }

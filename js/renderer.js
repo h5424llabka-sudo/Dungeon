@@ -84,7 +84,7 @@ export class Renderer {
         const sx   = (tx - camX) * ts;
         const sy   = (ty - camY) * ts;
 
-        this._drawTile(ctx, tile, sx, sy, ts, isVisible);
+        this._drawTile(ctx, tile, sx, sy, ts, isVisible, tx, ty, state);
       }
     }
 
@@ -124,24 +124,54 @@ export class Renderer {
     this.animTick++;
   }
 
-  _drawTile(ctx, tile, sx, sy, ts, isVisible) {
+  _drawTile(ctx, tile, sx, sy, ts, isVisible, tx, ty, state) {
     if (Assets.config) {
+      let cellCustom = null;
+      if (state && state.isVillage && state.customImages && state.customImages[ty] && state.customImages[ty][tx]) {
+        cellCustom = state.customImages[ty][tx];
+      }
+
+      // 村のオブジェクトタイルの場合は、透過背景として先に床を描画する
+      const isVillageObj = [TILE.VILLAGE_WALL, TILE.NPC_STORAGE, TILE.NPC_BANK, TILE.NPC_SHOP, TILE.NPC_SHRINE, TILE.DUNGEON_GATE].includes(tile);
+      if (isVillageObj || (state && state.isVillage && tile === TILE.VILLAGE_FLOOR)) {
+        const floorImgConfig = (cellCustom && cellCustom.base) ? cellCustom.base : Assets.config.village?.floor;
+        const floorImg = Assets.getImage(floorImgConfig);
+        if (floorImg) {
+          ctx.globalAlpha = isVisible ? 1.0 : 0.5;
+          const fx = floorImgConfig.sx || 0;
+          const fy = floorImgConfig.sy || 0;
+          ctx.drawImage(floorImg, fx, fy, 32, 32, sx, sy, ts, ts);
+          ctx.globalAlpha = 1.0;
+        } else if (isVillageObj) {
+          ctx.fillStyle = COLORS.villageFloor;
+          ctx.fillRect(sx, sy, ts, ts);
+        }
+      }
+
+      if (state && state.isVillage && tile === TILE.VILLAGE_FLOOR) {
+        return;
+      }
+
       let imgSrc = null;
-      switch (tile) {
-        case TILE.FLOOR:         imgSrc = Assets.config.dungeon?.floor; break;
-        case TILE.WALL:          imgSrc = Assets.config.dungeon?.wall; break;
-        case TILE.CORRIDOR:      imgSrc = Assets.config.dungeon?.corridor; break;
-        case TILE.WATER:         imgSrc = Assets.config.dungeon?.water; break;
-        case TILE.STAIRS:        imgSrc = Assets.config.dungeon?.stairs; break;
-        case TILE.DOOR:          imgSrc = Assets.config.dungeon?.door; break;
-        case TILE.TRAP:          imgSrc = Assets.config.dungeon?.trap; break;
-        case TILE.VILLAGE_FLOOR: imgSrc = Assets.config.village?.floor; break;
-        case TILE.VILLAGE_WALL:  imgSrc = Assets.config.village?.wall; break;
-        case TILE.NPC_STORAGE:   imgSrc = Assets.config.village?.storage; break;
-        case TILE.NPC_BANK:      imgSrc = Assets.config.village?.bank; break;
-        case TILE.NPC_SHOP:      imgSrc = Assets.config.village?.shop; break;
-        case TILE.NPC_SHRINE:    imgSrc = Assets.config.village?.shrine; break;
-        case TILE.DUNGEON_GATE:  imgSrc = Assets.config.village?.gate; break;
+      if (cellCustom && cellCustom.obj !== undefined) {
+        imgSrc = cellCustom.obj;
+      } else {
+        switch (tile) {
+          case TILE.FLOOR:         imgSrc = Assets.config.dungeon?.floor; break;
+          case TILE.WALL:          imgSrc = Assets.config.dungeon?.wall; break;
+          case TILE.CORRIDOR:      imgSrc = Assets.config.dungeon?.corridor; break;
+          case TILE.WATER:         imgSrc = Assets.config.dungeon?.water; break;
+          case TILE.STAIRS:        imgSrc = Assets.config.dungeon?.stairs; break;
+          case TILE.DOOR:          imgSrc = Assets.config.dungeon?.door; break;
+          case TILE.TRAP:          imgSrc = Assets.config.dungeon?.trap; break;
+          case TILE.VILLAGE_FLOOR: imgSrc = Assets.config.village?.floor; break;
+          case TILE.VILLAGE_WALL:  imgSrc = Assets.config.village?.wall; break;
+          case TILE.NPC_STORAGE:   imgSrc = Assets.config.village?.storage; break;
+          case TILE.NPC_BANK:      imgSrc = Assets.config.village?.bank; break;
+          case TILE.NPC_SHOP:      imgSrc = Assets.config.village?.shop; break;
+          case TILE.NPC_SHRINE:    imgSrc = Assets.config.village?.shrine; break;
+          case TILE.DUNGEON_GATE:  imgSrc = Assets.config.village?.gate; break;
+        }
       }
       const imgConfig = imgSrc;
       const img = Assets.getImage(imgConfig);

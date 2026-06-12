@@ -11,10 +11,10 @@ import { getBlessingById } from './gacha.js';
 export class Player {
   constructor(selectedBlessingIds = []) {
     // ── 基本ステータス ──────────────────────
-    this.hpMax     = 80;
-    this.hp        = 80;
-    this.baseAtk   = 10;
-    this.baseDef   = 5;
+    this.hpMax     = 15;
+    this.hp        = 15;
+    this.baseAtk   = 8;
+    this.baseDef   = 0;
     this.level     = 1;
     this.exp       = 0;
     this.hunger    = 100;
@@ -166,12 +166,12 @@ export class Player {
     while (this.level < EXP_TABLE.length - 1 &&
            this.exp >= EXP_TABLE[this.level]) {
       this.level++;
-      const hpGain = 5 + Math.floor(Math.random() * 5);
+      const hpGain = 4 + Math.floor(Math.random() * 3);
       this.hpMax += hpGain;
       this.hp     = this.hpMax;
-      this.baseAtk += 2;
-      this.baseDef += 1;
-      msgs.push(`レベルアップ！ Lv${this.level}になった。HP最大値+${hpGain}、攻撃+2、防御+1。`);
+      this.baseAtk += 1;
+      this.baseDef += 0;
+      msgs.push(`レベルアップ！ Lv${this.level}になった。HP最大値+${hpGain}、攻撃+1。`);
     }
 
     return msgs;
@@ -210,6 +210,14 @@ export class Player {
       this._lastHungerDmgTurn = this.turnCount;
       this.hp -= 1;
       msgs.push('空腹でHPが減っている…');
+    }
+
+    // 自然回復（空腹でない場合）
+    if (this.hunger > 0 && this.hp > 0 && this.hp < this.hpMax && !this.hasStatus('poison')) {
+      // 一律で2ターン（2歩）ごとに1回復
+      if (this.turnCount % 2 === 0) {
+        this.hp = Math.min(this.hpMax, this.hp + 1);
+      }
     }
 
     // HP自然回復（加護：生命の流れ）
