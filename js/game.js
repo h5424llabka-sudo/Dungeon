@@ -309,6 +309,19 @@ export class Game {
       target.addStatus('stun', 2);
       this.addMessage(`${target.name}が麻痺した！`);
     }
+    if (this.player.weapon?.special === 'drain') {
+      const heal = Math.max(1, Math.floor(actual / 3));
+      this.player.hp = Math.min(this.player.hpMax, this.player.hp + heal);
+      this.addMessage(`妖刀がHPを${heal}吸収した！`, '#44ff44');
+    }
+    if (this.player.weapon?.special === 'freeze' && Math.random() < 0.2) {
+      target.addStatus('slow', 3);
+      this.addMessage(`${target.name}の動きが鈍った！`);
+    }
+    if (this.player.weapon?.special === 'sleep_hit' && Math.random() < 0.2) {
+      target.addStatus('sleep', 3);
+      this.addMessage(`${target.name}が眠った！`);
+    }
 
     if (target.isDead()) {
       this._onEnemyKilled(target);
@@ -464,6 +477,13 @@ export class Game {
           }
         }
       },
+      enemies: this.enemies,
+      isInSameRoom: (a, b) => {
+        if (!this.floorData?.rooms) return false;
+        const ra = this.floorData.rooms.find(r => a.x >= r.x && a.x < r.x + r.w && a.y >= r.y && a.y < r.y + r.h);
+        if (!ra) return false;
+        return (b.x >= ra.x && b.x < ra.x + ra.w && b.y >= ra.y && b.y < ra.y + ra.h);
+      }
     };
 
     const msg = useItem(item, this.player, ctx);
@@ -540,7 +560,11 @@ export class Game {
         const times = action.type === 'double_attack' ? 2 : 1;
         for (let i = 0; i < times; i++) {
           const { damage, isCrit } = enemy.calcAttack();
-          const { actual, deathResist } = this.player.takeDamage(damage);
+          const { actual, deathResist, evaded } = this.player.takeDamage(damage);
+          if (evaded) {
+            this.addMessage(`${enemy.name}の攻撃を見切った！`, '#44ff44');
+            continue;
+          }
           const critStr = isCrit ? '【会心！】' : '';
           this.addMessage(`${enemy.name}の攻撃！ ${actual}ダメージ。${critStr}`);
           this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
@@ -551,7 +575,11 @@ export class Game {
 
       case 'poison_attack': {
         const { damage } = enemy.calcAttack();
-        const { actual } = this.player.takeDamage(damage);
+        const { actual, evaded } = this.player.takeDamage(damage);
+        if (evaded) {
+          this.addMessage(`${enemy.name}の毒攻撃を見切った！`, '#44ff44');
+          break;
+        }
         this.player.addStatus('poison', action.duration);
         this.addMessage(`${enemy.name}の毒攻撃！ ${actual}ダメージ。毒になった。`);
         this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
@@ -574,6 +602,10 @@ export class Game {
       }
 
       case 'steal_item': {
+        if (this.player.armor?.special === 'anti_theft') {
+          this.addMessage(`${enemy.name}はアイテムを盗もうとしたが、盾に阻まれた！`, '#44ff44');
+          break;
+        }
         if (this.player.inventory.length > 0 && !enemy.stolenItem) {
           const idx = Math.floor(Math.random() * this.player.inventory.length);
           enemy.stolenItem = this.player.inventory.splice(idx, 1)[0];
@@ -583,6 +615,10 @@ export class Game {
       }
 
       case 'steal_gold': {
+        if (this.player.armor?.special === 'anti_theft') {
+          this.addMessage(`${enemy.name}はお金を盗もうとしたが、盾に阻まれた！`, '#44ff44');
+          break;
+        }
         const stolen = Math.min(this.player.gold, Math.floor(10 + Math.random() * 20));
         if (stolen > 0) {
           this.player.gold -= stolen;
@@ -598,6 +634,21 @@ export class Game {
         this.addMessage(`${enemy.name}の生命吸収！ ${actual}ダメージ。`);
         this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
         this.renderer.addFloatText(enemy.x, enemy.y, `+${Math.floor(actual / 2)}`, '#44ff44');
+        break;
+      }
+
+      case 'dissolve': {
+        const targetEquip = Math.random() < 0.5 ? this.player.weapon : (this.player.armor || this.player.weapon);
+        if (targetEquip) {
+          if (targetEquip.special === 'rust_proof' || targetEquip.rust_proof) {
+            this.addMessage(`${enemy.name}の溶解液！しかし${targetEquip.name}はサビなかった！`, '#44ff44');
+          } else {
+            targetEquip.bonus = (targetEquip.bonus || 0) - 1;
+            this.addMessage(`${enemy.name}の溶解液！${targetEquip.name}の強化値が下がった！`, '#ff6666');
+          }
+        } else {
+          this.addMessage(`${enemy.name}は溶解液を吐いたが効果がなかった。`);
+        }
         break;
       }
 
@@ -660,6 +711,16 @@ export class Game {
   _gameOver() {
     // 記憶継承データ保存
     this.saveData.lastEquipSnapshot = this.player.getEquipSnapshot();
+
+    // 復活の草チェック
+    const reviveIdx = this.player.inventory.findIndex(i => i.id === 'g_revive');
+    if (reviveIdx >= 0) {
+      this.player.inventory.splice(reviveIdx, 1);
+      this.player.hp = this.player.hpMax;
+      this.addMessage('復活の草が光り輝き、全回復して復活した！', '#ffff00');
+      this.player.statuses = {}; // 状態異常リセット
+      return;
+    }
 
     // 復活チェック（死神の加護）
     if (this.player.blessingEffects.revive && Math.random() < this.player.blessingEffects.revive) {

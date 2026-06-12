@@ -169,9 +169,8 @@ export class Player {
       const hpGain = 4 + Math.floor(Math.random() * 3);
       this.hpMax += hpGain;
       this.hp     = this.hpMax;
-      this.baseAtk += 1;
       this.baseDef += 0;
-      msgs.push(`レベルアップ！ Lv${this.level}になった。HP最大値+${hpGain}、攻撃+1。`);
+      msgs.push(`レベルアップ！ Lv${this.level}になった。HP最大値+${hpGain}。`);
     }
 
     return msgs;
@@ -199,7 +198,9 @@ export class Player {
     }
 
     // 満腹度減少
-    if (this.turnCount - this._lastHungerTurn >= this.hungerTick) {
+    let currentHungerTick = this.hungerTick;
+    if (this.armor?.special === 'heavy') currentHungerTick = Math.max(1, Math.floor(currentHungerTick * 0.5));
+    if (this.turnCount - this._lastHungerTurn >= currentHungerTick) {
       this._lastHungerTurn = this.turnCount;
       this.hunger = Math.max(0, this.hunger - 1);
       if (this.hunger === 0) msgs.push('お腹が空いている…');
@@ -249,6 +250,9 @@ export class Player {
   //  ダメージ受け
   // -------------------------------------------------------
   takeDamage(dmg) {
+    if (this.armor?.special === 'evade' && Math.random() < 0.2) {
+      return { actual: 0, deathResist: false, evaded: true };
+    }
     const actual = Math.max(1, dmg - this.def);
     this.hp -= actual;
 

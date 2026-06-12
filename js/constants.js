@@ -69,7 +69,6 @@ export const ITEM_TYPE = {
   ARMOR:   'armor',
   GRASS:   'grass',
   SCROLL:  'scroll',
-  STAFF:   'staff',
   FOOD:    'food',
   POT:     'pot',
   GOLD:    'gold',
@@ -129,7 +128,7 @@ export const GAME_STATE = {
 
 // ダンジョン設定
 export const DUNGEON_MAX_FLOOR = 15;
-export const BOSS_FLOORS = [5, 10, 15];
+export const BOSS_FLOORS = [15];
 
 // 戦闘定数
 export const BASE_CRIT_RATE  = 0.05;   // 5%

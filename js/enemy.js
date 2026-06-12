@@ -8,113 +8,91 @@ import { BASE_CRIT_RATE, BASE_CRIT_MULTI } from './constants.js';
 // 敵マスタ
 // -------------------------------------------------------
 export const ENEMY_DEFS = [
-  // ── 初期（F1〜3）──────────────────────────────────
-  {
-    id: 'slime',     name: 'スライム',    icon: '🟢',
-    hp: 15, atk: 4,  def: 0, exp: 1,  goldMin: 3,  goldMax: 8,
-    minFloor: 1, maxFloor: 8,
-    special: 'dissolve',    // アイテムを溶かす
-    ai: 'normal', speed: 1,
-    desc: '酸でアイテムを溶かすことがある。',
-  },
-  {
-    id: 'bat',       name: 'コウモリ',    icon: '🦇',
-    hp: 12, atk: 5,  def: 1, exp: 2, goldMin: 2,  goldMax: 6,
-    minFloor: 1, maxFloor: 10,
-    special: 'double_attack',
-    ai: 'fast', speed: 2,
-    desc: '1ターンに2回攻撃する。',
-  },
-  {
-    id: 'goblin',    name: 'ゴブリン',    icon: '👺',
-    hp: 18, atk: 6,  def: 1, exp: 3, goldMin: 5,  goldMax: 15,
-    minFloor: 1, maxFloor: 12,
-    special: 'steal',       // アイテムを盗む
-    ai: 'normal', speed: 1,
-    desc: 'アイテムを盗んで逃げることがある。',
-  },
-  // ── 中盤（F4〜10）─────────────────────────────────
-  {
-    id: 'mage',      name: '魔道士',      icon: '🧙',
-    hp: 22, atk: 8,  def: 2, exp: 5, goldMin: 8,  goldMax: 20,
-    minFloor: 4, maxFloor: 15,
-    special: 'magic_bolt',  // 直線上に魔法を放つ
-    ai: 'ranged', speed: 1,
-    desc: '離れた位置から魔法弾を放つ。',
-  },
-  {
-    id: 'statue',    name: '石像兵',      icon: '🗿',
-    hp: 40, atk: 7,  def: 8, exp: 8, goldMin: 10, goldMax: 25,
-    minFloor: 5, maxFloor: 20,
-    special: null,
-    ai: 'slow', speed: 1,
-    desc: '高い防御力を持つ。鈍足。',
-  },
-  {
-    id: 'poison_frog', name: '毒ガエル',  icon: '🐸',
-    hp: 25, atk: 9,  def: 2, exp: 6, goldMin: 5,  goldMax: 12,
-    minFloor: 5, maxFloor: 15,
-    special: 'poison',
-    ai: 'normal', speed: 1,
-    desc: '攻撃が当たると毒になる。',
-  },
-  {
-    id: 'thief_bird', name: '盗賊鳥',     icon: '🦅',
-    hp: 20, atk: 8,  def: 3, exp: 6, goldMin: 0,  goldMax: 0,
-    minFloor: 6, maxFloor: 18,
-    special: 'gold_steal',  // ゴールドを盗む
-    ai: 'fast', speed: 2,
-    desc: 'ゴールドを盗んで飛び去ることがある。',
-  },
-  // ── 終盤（F11〜19）────────────────────────────────
-  {
-    id: 'dark_knight', name: '暗黒騎士',  icon: '🧟',
-    hp: 55, atk: 14, def: 8, exp: 15, goldMin: 15, goldMax: 40,
-    minFloor: 11, maxFloor: 20,
-    special: 'life_drain',
-    ai: 'normal', speed: 1,
-    desc: '攻撃でHPを吸収する。',
-  },
-  {
-    id: 'witch',     name: '魔女',        icon: '🧝',
-    hp: 35, atk: 12, def: 3, exp: 12, goldMin: 20, goldMax: 50,
-    minFloor: 12, maxFloor: 20,
-    special: 'curse_equip',
-    ai: 'ranged', speed: 1,
-    desc: '装備品を呪う呪文を使う。',
-  },
+  // --- 無能力系統 (9種) ---
+  // 1. スライム
+  { id: 'slime1', name: 'スライム',       icon: '🟢', hp: 10, atk: 3, def: 0, exp: 1, goldMin: 2, goldMax: 5, minFloor: 1, maxFloor: 4, special: null, ai: 'normal', speed: 1, desc: '普通のぷるぷるしたモンスター。' },
+  { id: 'slime2', name: 'スライムベス',   icon: '🔴', hp: 20, atk: 5, def: 1, exp: 3, goldMin: 5, goldMax: 10, minFloor: 4, maxFloor: 9, special: null, ai: 'normal', speed: 1, desc: '少し強くなった赤いスライム。' },
+  { id: 'slime3', name: 'キングスライム', icon: '👑', hp: 40, atk: 12, def: 4, exp: 12, goldMin: 15, goldMax: 30, minFloor: 9, maxFloor: 15, special: null, ai: 'normal', speed: 1, desc: '巨大なスライムの王。' },
+
+  // 2. コウモリ
+  { id: 'bat1', name: 'コウモリ',         icon: '🦇', hp: 8, atk: 4, def: 0, exp: 2, goldMin: 1, goldMax: 3, minFloor: 1, maxFloor: 4, special: null, ai: 'normal', speed: 1, desc: '暗闇に潜むコウモリ。' },
+  { id: 'bat2', name: '大コウモリ',       icon: '🦇', hp: 18, atk: 7, def: 1, exp: 4, goldMin: 4, goldMax: 8, minFloor: 5, maxFloor: 10, special: null, ai: 'normal', speed: 1, desc: '大きく育ったコウモリ。' },
+  { id: 'bat3', name: 'ヴァンパイアバット', icon: '🦇', hp: 35, atk: 14, def: 3, exp: 14, goldMin: 10, goldMax: 20, minFloor: 10, maxFloor: 15, special: null, ai: 'normal', speed: 1, desc: '血を求める凶暴なコウモリ。' },
+
+  // 3. ゴブリン
+  { id: 'goblin1', name: 'ゴブリン',       icon: '👺', hp: 12, atk: 4, def: 1, exp: 2, goldMin: 3, goldMax: 8, minFloor: 1, maxFloor: 5, special: null, ai: 'normal', speed: 1, desc: 'ずる賢い小鬼。' },
+  { id: 'goblin2', name: 'ホブゴブリン',   icon: '👺', hp: 25, atk: 8, def: 2, exp: 5, goldMin: 8, goldMax: 15, minFloor: 5, maxFloor: 11, special: null, ai: 'normal', speed: 1, desc: '逞しくなった小鬼の戦士。' },
+  { id: 'goblin3', name: 'ゴブリンキング', icon: '👹', hp: 50, atk: 16, def: 5, exp: 16, goldMin: 20, goldMax: 40, minFloor: 11, maxFloor: 15, special: null, ai: 'normal', speed: 1, desc: '小鬼たちを束ねる王。' },
+
+  // 4. オーク
+  { id: 'orc1', name: 'オーク',           icon: '🐗', hp: 16, atk: 5, def: 1, exp: 3, goldMin: 4, goldMax: 10, minFloor: 2, maxFloor: 6, special: null, ai: 'normal', speed: 1, desc: '豚の顔をした魔物。' },
+  { id: 'orc2', name: 'オーク戦士',       icon: '🐗', hp: 30, atk: 10, def: 3, exp: 7, goldMin: 10, goldMax: 20, minFloor: 6, maxFloor: 12, special: null, ai: 'normal', speed: 1, desc: '武装したオーク。' },
+  { id: 'orc3', name: 'オーク大将',       icon: '🐗', hp: 60, atk: 18, def: 6, exp: 18, goldMin: 25, goldMax: 50, minFloor: 12, maxFloor: 15, special: null, ai: 'normal', speed: 1, desc: 'オークの群れを率いる大将。' },
+
+  // 5. ゴーレム
+  { id: 'golem1', name: 'ゴーレム',       icon: '🗿', hp: 20, atk: 4, def: 4, exp: 4, goldMin: 0, goldMax: 5, minFloor: 3, maxFloor: 7, special: null, ai: 'normal', speed: 1, desc: '泥でできた人形。' },
+  { id: 'golem2', name: 'ストーンゴーレム', icon: '🗿', hp: 45, atk: 8, def: 8, exp: 9, goldMin: 0, goldMax: 10, minFloor: 7, maxFloor: 13, special: null, ai: 'normal', speed: 1, desc: '岩で作られた強固な人形。' },
+  { id: 'golem3', name: 'アイアンゴーレム', icon: '🗿', hp: 80, atk: 15, def: 12, exp: 22, goldMin: 0, goldMax: 20, minFloor: 13, maxFloor: 15, special: null, ai: 'normal', speed: 1, desc: '鉄壁の防御を誇る鋼の人形。' },
+
+  // 6. ウルフ
+  { id: 'wolf1', name: 'ウルフ',           icon: '🐺', hp: 12, atk: 5, def: 0, exp: 2, goldMin: 0, goldMax: 0, minFloor: 2, maxFloor: 6, special: null, ai: 'fast', speed: 2, desc: '素早く動く狼。' },
+  { id: 'wolf2', name: 'ダイアウルフ',     icon: '🐺', hp: 24, atk: 9, def: 1, exp: 5, goldMin: 0, goldMax: 0, minFloor: 6, maxFloor: 11, special: null, ai: 'fast', speed: 2, desc: '大きく凶暴な狼。' },
+  { id: 'wolf3', name: 'フェンリル',       icon: '🐺', hp: 45, atk: 15, def: 3, exp: 15, goldMin: 0, goldMax: 0, minFloor: 11, maxFloor: 15, special: null, ai: 'fast', speed: 2, desc: '魔力を持った神狼。' },
+
+  // 7. スケルトン
+  { id: 'skel1', name: 'スケルトン',       icon: '💀', hp: 14, atk: 6, def: 1, exp: 3, goldMin: 1, goldMax: 3, minFloor: 3, maxFloor: 8, special: null, ai: 'normal', speed: 1, desc: '動く骸骨。' },
+  { id: 'skel2', name: 'スケルトンナイト', icon: '💀', hp: 28, atk: 11, def: 4, exp: 7, goldMin: 5, goldMax: 10, minFloor: 8, maxFloor: 13, special: null, ai: 'normal', speed: 1, desc: '生前の武装を纏う骸骨戦士。' },
+  { id: 'skel3', name: 'スケルトンロード', icon: '💀', hp: 55, atk: 17, def: 7, exp: 17, goldMin: 15, goldMax: 30, minFloor: 13, maxFloor: 15, special: null, ai: 'normal', speed: 1, desc: '骸骨を統べる不死の王。' },
+
+  // 8. ヘビ
+  { id: 'snake1', name: '大蛇',             icon: '🐍', hp: 15, atk: 5, def: 1, exp: 3, goldMin: 0, goldMax: 0, minFloor: 4, maxFloor: 9, special: null, ai: 'normal', speed: 1, desc: '巨大な蛇。' },
+  { id: 'snake2', name: 'ポイズンスネーク', icon: '🐍', hp: 30, atk: 10, def: 2, exp: 6, goldMin: 0, goldMax: 0, minFloor: 8, maxFloor: 13, special: null, ai: 'normal', speed: 1, desc: '鮮やかな色をした蛇。' },
+  { id: 'snake3', name: 'バジリスク',       icon: '🐍', hp: 55, atk: 16, def: 5, exp: 16, goldMin: 0, goldMax: 0, minFloor: 12, maxFloor: 15, special: null, ai: 'normal', speed: 1, desc: '睨みつける魔眼を持つ蛇。' },
+
+  // 9. 騎士
+  { id: 'knight1', name: '騎士',           icon: '🤺', hp: 18, atk: 6, def: 3, exp: 4, goldMin: 10, goldMax: 20, minFloor: 4, maxFloor: 9, special: null, ai: 'normal', speed: 1, desc: '名もなき騎士。' },
+  { id: 'knight2', name: '鎧騎士',         icon: '🛡️', hp: 35, atk: 12, def: 6, exp: 9, goldMin: 20, goldMax: 40, minFloor: 9, maxFloor: 14, special: null, ai: 'normal', speed: 1, desc: '重い鎧に身を包む。' },
+  { id: 'knight3', name: 'リビングアーマー', icon: '⚔️', hp: 65, atk: 18, def: 10, exp: 20, goldMin: 30, goldMax: 60, minFloor: 14, maxFloor: 15, special: null, ai: 'normal', speed: 1, desc: '魂が宿った呪いの鎧。' },
+
+  // --- 特殊能力系統 (6種) ---
+  // 10. 泥棒系 (steal_item/steal_gold)
+  { id: 'thief1', name: '泥棒鳥',         icon: '🦅', hp: 10, atk: 3, def: 0, exp: 2, goldMin: 0, goldMax: 0, minFloor: 2, maxFloor: 7, special: 'steal_gold', ai: 'fast', speed: 2, desc: 'お金を盗んで逃げる。' },
+  { id: 'thief2', name: '盗賊鳥',         icon: '🦅', hp: 20, atk: 6, def: 1, exp: 5, goldMin: 0, goldMax: 0, minFloor: 7, maxFloor: 12, special: 'steal_item', ai: 'fast', speed: 2, desc: 'アイテムを盗んで逃げる。' },
+  { id: 'thief3', name: '怪盗鳥',         icon: '🦅', hp: 40, atk: 10, def: 2, exp: 12, goldMin: 0, goldMax: 0, minFloor: 12, maxFloor: 15, special: 'steal_item', ai: 'fast', speed: 2, desc: '大事なアイテムを盗んで逃げる。' },
+
+  // 11. 魔法系 (magic_bolt)
+  { id: 'mage1', name: '魔道士',         icon: '🧙', hp: 12, atk: 5, def: 1, exp: 3, goldMin: 5, goldMax: 10, minFloor: 3, maxFloor: 8, special: 'magic_bolt', ai: 'ranged', speed: 1, desc: '遠距離から魔法を撃つ。' },
+  { id: 'mage2', name: '大魔道士',       icon: '🧙', hp: 25, atk: 10, def: 2, exp: 7, goldMin: 15, goldMax: 25, minFloor: 8, maxFloor: 13, special: 'magic_bolt', ai: 'ranged', speed: 1, desc: '強力な魔法を撃つ。' },
+  { id: 'mage3', name: 'アークメイジ',   icon: '🧙‍♂️', hp: 50, atk: 18, def: 4, exp: 16, goldMin: 30, goldMax: 50, minFloor: 13, maxFloor: 15, special: 'magic_bolt', ai: 'ranged', speed: 1, desc: '極大魔法を操る大魔道。' },
+
+  // 12. 毒系 (poison)
+  { id: 'poison1', name: '毒ガエル',       icon: '🐸', hp: 12, atk: 4, def: 1, exp: 2, goldMin: 0, goldMax: 0, minFloor: 3, maxFloor: 8, special: 'poison', ai: 'normal', speed: 1, desc: '攻撃時に毒を与える。' },
+  { id: 'poison2', name: '猛毒ガエル',     icon: '🐸', hp: 24, atk: 8, def: 2, exp: 5, goldMin: 0, goldMax: 0, minFloor: 8, maxFloor: 13, special: 'poison', ai: 'normal', speed: 1, desc: '攻撃時に猛毒を与える。' },
+  { id: 'poison3', name: '劇毒ガエル',     icon: '🐸', hp: 45, atk: 14, def: 4, exp: 14, goldMin: 0, goldMax: 0, minFloor: 13, maxFloor: 15, special: 'poison', ai: 'normal', speed: 1, desc: '触れるだけで危険な劇毒を持つ。' },
+
+  // 13. 吸血系 (life_drain)
+  { id: 'vamp1', name: 'ゾンビ',         icon: '🧟', hp: 18, atk: 6, def: 1, exp: 4, goldMin: 2, goldMax: 5, minFloor: 4, maxFloor: 9, special: 'life_drain', ai: 'normal', speed: 1, desc: 'HPを吸収する。' },
+  { id: 'vamp2', name: 'グール',         icon: '🧟', hp: 35, atk: 11, def: 3, exp: 8, goldMin: 5, goldMax: 12, minFloor: 9, maxFloor: 14, special: 'life_drain', ai: 'normal', speed: 1, desc: '与えたダメージで回復する。' },
+  { id: 'vamp3', name: 'ヴァンパイア',   icon: '🧛', hp: 65, atk: 16, def: 6, exp: 18, goldMin: 20, goldMax: 40, minFloor: 14, maxFloor: 15, special: 'life_drain', ai: 'normal', speed: 1, desc: '血を吸い尽くす吸血鬼。' },
+
+  // 14. 溶解系 (dissolve)
+  { id: 'melt1', name: 'アメーバ',       icon: '🦠', hp: 14, atk: 4, def: 1, exp: 3, goldMin: 0, goldMax: 0, minFloor: 5, maxFloor: 10, special: 'dissolve', ai: 'normal', speed: 1, desc: '装備品の強化値を下げる。' },
+  { id: 'melt2', name: 'アシッドゼリー', icon: '🦠', hp: 28, atk: 9, def: 2, exp: 7, goldMin: 0, goldMax: 0, minFloor: 10, maxFloor: 14, special: 'dissolve', ai: 'normal', speed: 1, desc: '装備を強く溶かす。' },
+  { id: 'melt3', name: 'メルトスライム', icon: '🦠', hp: 55, atk: 15, def: 5, exp: 16, goldMin: 0, goldMax: 0, minFloor: 14, maxFloor: 15, special: 'dissolve', ai: 'normal', speed: 1, desc: '全てを溶かす恐ろしい粘液。' },
+
+  // 15. 倍速系 (double_attack)
+  { id: 'mantis1', name: 'キラーマンティス', icon: '🦗', hp: 15, atk: 5, def: 1, exp: 4, goldMin: 2, goldMax: 6, minFloor: 6, maxFloor: 11, special: 'double_attack', ai: 'fast', speed: 2, desc: '1ターンに2回攻撃する。' },
+  { id: 'mantis2', name: 'デスマンティス',   icon: '🦗', hp: 30, atk: 10, def: 3, exp: 9, goldMin: 5, goldMax: 15, minFloor: 11, maxFloor: 14, special: 'double_attack', ai: 'fast', speed: 2, desc: '素早い連撃を繰り出す。' },
+  { id: 'mantis3', name: 'ジェノサイド',     icon: '🦗', hp: 60, atk: 16, def: 6, exp: 20, goldMin: 15, goldMax: 30, minFloor: 14, maxFloor: 15, special: 'double_attack', ai: 'fast', speed: 2, desc: '目にも止まらぬ速さで切り刻む。' },
+
   // ── ボス ──────────────────────────────────────────
   {
     id: 'boss_garmu', name: '魔将ガルム',  icon: '👹',
-    hp: 120, atk: 18, def: 10, exp: 50, goldMin: 100, goldMax: 200,
-    minFloor: 5, maxFloor: 5, isBoss: true,
+    hp: 150, atk: 25, def: 10, exp: 100, goldMin: 200, goldMax: 300,
+    minFloor: 15, maxFloor: 15, isBoss: true,
     special: 'summon_minion',
     ai: 'boss', speed: 1,
-    desc: '配下のモンスターを召喚する。',
-  },
-  {
-    id: 'boss_dragon', name: '水龍',       icon: '🐉',
-    hp: 200, atk: 22, def: 12, exp: 80, goldMin: 200, goldMax: 350,
-    minFloor: 10, maxFloor: 10, isBoss: true,
-    special: 'flood',
-    ai: 'boss', speed: 1,
-    desc: '水を噴き出し周囲のタイルを水面に変える。',
-  },
-  {
-    id: 'boss_reaper', name: '死神',       icon: '💀',
-    hp: 180, atk: 28, def: 8, exp: 120, goldMin: 300, goldMax: 500,
-    minFloor: 15, maxFloor: 15, isBoss: true,
-    special: 'death_mark',
-    ai: 'boss', speed: 1,
-    desc: '死の刻印を付与する。3ターン後に即死。',
-  },
-  {
-    id: 'boss_final', name: '混沌の王',    icon: '☠️',
-    hp: 350, atk: 35, def: 15, exp: 200, goldMin: 500, goldMax: 1000,
-    minFloor: 20, maxFloor: 20, isBoss: true,
-    special: 'chaos_aura',
-    ai: 'boss', speed: 1,
-    desc: '全ての属性攻撃を使いこなす最終ボス。',
+    desc: '配下のモンスターを召喚する魔将。',
   },
 ];
 
@@ -248,14 +226,17 @@ export class Enemy {
       case 'poison':
         if (dist <= 1.5) return { type: 'poison_attack', target: player, duration: 4 };
         break;
-      case 'steal':
+      case 'steal_item':
         if (dist <= 1.5) return { type: 'steal_item', target: player };
         break;
-      case 'gold_steal':
+      case 'steal_gold':
         if (dist <= 1.5) return { type: 'steal_gold', target: player };
         break;
       case 'life_drain':
         if (dist <= 1.5) return { type: 'life_drain', target: player };
+        break;
+      case 'dissolve':
+        if (dist <= 1.5) return { type: 'dissolve', target: player };
         break;
       case 'summon_minion':
         return { type: 'summon_minion', count: 2 };
