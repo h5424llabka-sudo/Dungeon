@@ -8,7 +8,7 @@ import { Game } from './game.js';
 import {
   GAME_STATE, RARITY, RARITY_COLOR, RARITY_NAME,
   GACHA_COST_SINGLE, GACHA_COST_TEN, GACHA_PITY,
-  SLOT_UNLOCK_COST,
+  SLOT_UNLOCK_COST, INVENTORY_MAX,
 } from './constants.js';
 import { getDisplayName } from './items.js';
 import { Village } from './village.js';
@@ -420,7 +420,7 @@ class App {
         buyBtn.textContent = `${item.price}G`;
         buyBtn.onclick = () => {
           if (this.saveData.playerGold >= item.price) {
-            if (this.village.player.inventory.length >= 8) {
+            if (this.village.player.inventory.length >= INVENTORY_MAX) {
               this._toast('持ち物がいっぱいです');
               return;
             }
@@ -474,7 +474,7 @@ class App {
       const elItem = el('div', { class: 'inv-row' });
       elItem.innerHTML = `<span class="inv-num">${i+1}</span><span class="inv-name" style="color:${RARITY_COLOR[item.rarity] || '#fff'}">${getDisplayName(item)}</span>`;
       elItem.onclick = () => {
-        if (this.village.player.inventory.length >= 8) return; // プレイヤーのインベントリ制限
+        if (this.village.player.inventory.length >= INVENTORY_MAX) return; // プレイヤーのインベントリ制限
         this.village.player.inventory.push(item);
         this.saveData.storage.splice(i, 1);
         this.saveData.playerInventory = this.village.player.inventory;
@@ -800,8 +800,8 @@ class App {
       : p.hp / p.hpMax > 0.25 ? '#ccaa00' : '#cc2222';
     $('hunger-bar').style.width = `${(p.hunger / p.hungerMax) * 100}%`;
 
-    $('eq-weapon').textContent  = p.weapon ? `${p.weapon.name}+${p.weapon.bonus||0}` : 'なし';
-    $('eq-armor').textContent   = p.armor  ? `${p.armor.name}+${p.armor.bonus||0}`   : 'なし';
+    $('eq-weapon').textContent  = p.weapon ? getDisplayName(p.weapon) : 'なし';
+    $('eq-armor').textContent   = p.armor  ? getDisplayName(p.armor) : 'なし';
 
     // 状態異常
     const statDiv = $('st-statuses');
@@ -820,9 +820,9 @@ class App {
   _renderInventory(p) {
     const list = $('inventory-list');
     
-    // 初回のみDOM要素を生成（8枠固定）
+    // 初回のみDOM要素を生成（枠固定）
     if (list.children.length === 0) {
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < INVENTORY_MAX; i++) {
         const row = el('div', { class: 'inv-row inv-empty' });
         row.innerHTML = `
           <span class="inv-num">${i+1}</span>
@@ -834,7 +834,7 @@ class App {
     }
 
     // 中身だけ更新する
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < INVENTORY_MAX; i++) {
       const item = p.inventory[i];
       const row  = list.children[i];
       const nameSpan = row.querySelector('.inv-name, .inv-empty-label');

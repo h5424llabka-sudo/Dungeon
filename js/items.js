@@ -127,12 +127,23 @@ export function isIdentified(id) {
 }
 
 export function getDisplayName(item) {
-  if (item.identified) return item.name;
-  if (item.type === ITEM_TYPE.WEAPON || item.type === ITEM_TYPE.ARMOR || item.type === ITEM_TYPE.FOOD || item.type === ITEM_TYPE.GOLD) {
-    return item.name;
+  let name = item.name;
+  if (!item.identified) {
+    if (item.type === ITEM_TYPE.WEAPON || item.type === ITEM_TYPE.ARMOR || item.type === ITEM_TYPE.FOOD || item.type === ITEM_TYPE.GOLD) {
+      name = item.name;
+    } else {
+      name = isIdentified(item.id) ? item.name : (_unknownNames[item.id] || item.name);
+    }
   }
-  if (isIdentified(item.id)) return item.name;
-  return _unknownNames[item.id] || item.name;
+
+  let suffix = '';
+  if (item.type === ITEM_TYPE.WEAPON || item.type === ITEM_TYPE.ARMOR) {
+    if (item.bonus) suffix += `+${item.bonus}`;
+    if (item.type === ITEM_TYPE.WEAPON) suffix += ` (攻${item.atk + (item.bonus || 0)})`;
+    if (item.type === ITEM_TYPE.ARMOR) suffix += ` (防${item.def + (item.bonus || 0)})`;
+  }
+
+  return name + suffix;
 }
 
 /**

@@ -13,7 +13,7 @@ export class Player {
     // ── 基本ステータス ──────────────────────
     this.hpMax     = 15;
     this.hp        = 15;
-    this.baseAtk   = 8;
+    this.baseAtk   = 5;
     this.baseDef   = 0;
     this.level     = 1;
     this.exp       = 0;

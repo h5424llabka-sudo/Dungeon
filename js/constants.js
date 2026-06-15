@@ -144,7 +144,7 @@ export const EXP_TABLE = [
 ];
 
 // インベントリ最大数
-export const INVENTORY_MAX = 8;
+export const INVENTORY_MAX = 20;
 
 // キーコード
 export const KEYS = {
