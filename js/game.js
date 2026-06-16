@@ -6,7 +6,7 @@ import { TILE, KEYS, DUNGEON_MAX_FLOOR, BOSS_FLOORS, SOUL_PER_FLOOR, SOUL_BOSS_K
 import { Player } from './player.js';
 import { generateFloor, computeFOV, isWalkable } from './dungeon.js';
 import { spawnEnemy } from './enemy.js';
-import { createRandomItem, resetIdentification, addToInventory, canAddToInventory, useItem, equipItem, getDisplayName, identifyItem } from './items.js';
+import { createRandomItem, resetIdentification, addToInventory, canAddToInventory, useItem, equipItem, getDisplayName, identifyItem, applyGrassEffect } from './items.js';
 import { Renderer } from './renderer.js';
 import { addSoulFragments, checkAchievements, writeSave } from './save.js';
 import { getBlessingById } from './gacha.js';
@@ -617,6 +617,7 @@ export class Game {
       if (base && base.type === item.type && (base.type === ITEM_TYPE.WEAPON || base.type === ITEM_TYPE.ARMOR)) {
         base.bonus = (base.bonus || 0) + (item.bonus || 0);
         pot.contents.pop(); // 合成素材を消去
+        pot.capacity = Math.max(1, (pot.capacity || 0) - 1); // 容量を減らす
         this.addMessage(`${base.name}の強化値が吸収された！`);
       }
     } else if (pot.potType === 'change') {
@@ -642,6 +643,81 @@ export class Game {
     const item = pot.contents.splice(contentIndex, 1)[0];
     addToInventory(this.player, item);
     this.addMessage(`${getDisplayName(pot)}から${getDisplayName(item)}を取り出した。`);
+  }
+
+  async _actionThrowItem(index) {
+    const item = this.player.inventory[index];
+    if (!item) return;
+    this.player.inventory.splice(index, 1);
+    this.addMessage(`${getDisplayName(item)}を投げた！`);
+
+    // Calculate trajectory
+    const dx = this.player.direction === 'RIGHT' ? 1 : this.player.direction === 'LEFT' ? -1 : 0;
+    const dy = this.player.direction === 'DOWN' ? 1 : this.player.direction === 'UP' ? -1 : 0;
+    
+    let x = this.player.x;
+    let y = this.player.y;
+    let targetEnemy = null;
+
+    for (let i = 0; i < 10; i++) {
+      const nx = x + dx;
+      const ny = y + dy;
+      if (this.tiles[ny][nx] === TILE.WALL) break; // hits wall
+      x = nx;
+      y = ny;
+      targetEnemy = this.enemies.find(e => e.x === x && e.y === y && !e.isDead());
+      if (targetEnemy) break;
+    }
+
+    if (targetEnemy) {
+      if (item.type === ITEM_TYPE.GRASS) {
+        this.addMessage(`${targetEnemy.name}に${getDisplayName(item)}が当たった！`);
+        const msg = applyGrassEffect(item, targetEnemy, this);
+        if(msg) this.addMessage(msg);
+      } else if (item.type === ITEM_TYPE.POT) {
+        this.addMessage(`${targetEnemy.name}に${getDisplayName(item)}が当たって割れた！`);
+        targetEnemy.takeDamage(10, true);
+        this.renderer.addFloatText(x, y, '10', '#ffffff');
+      } else {
+        const dmg = item.type === ITEM_TYPE.WEAPON ? 5 : 2;
+        this.addMessage(`${targetEnemy.name}に${getDisplayName(item)}が当たった！`);
+        targetEnemy.takeDamage(dmg, true);
+        this.renderer.addFloatText(x, y, dmg.toString(), '#ffffff');
+      }
+      if (targetEnemy.isDead()) this._onEnemyKilled(targetEnemy);
+    } else {
+      this.addMessage(`${getDisplayName(item)}は地面に落ちた。`);
+      if (item.type === ITEM_TYPE.POT) {
+        this.addMessage(`${getDisplayName(item)}は割れてしまった！`);
+        if (item.potType === 'soul') {
+          addSoulFragments(this.saveData, 150);
+          this.addMessage('魂片+150', '#ffd700');
+        } else if (item.contents && item.contents.length > 0) {
+          item.contents.forEach(c => {
+             this.floorItems.push({ ...c, x, y });
+             this.addMessage(`中から${getDisplayName(c)}が出てきた。`);
+          });
+        }
+      } else {
+        this.floorItems.push({ ...item, x, y });
+      }
+    }
+  }
+
+  _actionBreakPot(index) {
+    const item = this.player.inventory[index];
+    if (!item || item.type !== ITEM_TYPE.POT) return;
+    this.player.inventory.splice(index, 1);
+    this.addMessage(`${getDisplayName(item)}を足元で割った！`);
+    if (item.potType === 'soul') {
+      addSoulFragments(this.saveData, 150);
+      this.addMessage('魂片+150', '#ffd700');
+    } else if (item.contents && item.contents.length > 0) {
+      item.contents.forEach(c => {
+         this.floorItems.push({ ...c, x: this.player.x, y: this.player.y });
+         this.addMessage(`中から${getDisplayName(c)}が出てきた。`);
+      });
+    }
   }
 
   // -------------------------------------------------------
