@@ -74,16 +74,16 @@ const FOODS = [
 
 // ── 壺 ───────────────────────────────────────────────
 const POTS = [
-  { id: 'p_storage',  name: '保管の壺',   unknownName: '丸い壺',  capacity: 5, type: 'storage', desc: 'アイテムを最大5個収納できる。' },
-  { id: 'p_id',       name: '識別の壺',   unknownName: '細い壺',  capacity: 3, type: 'identify', desc: '入れたアイテムを識別する。' },
-  { id: 'p_merge',    name: '合成の壺',   unknownName: '重い壺',  capacity: 4, type: 'merge',   desc: '武器同士・盾同士を合成して強化する。' },
-  { id: 'p_curse',    name: '呪いの壺',   unknownName: '黒い壺',  capacity: 3, type: 'curse',   desc: '入れたアイテムが呪われる。' },
-  { id: 'p_soul',     name: '魂の壺',     unknownName: '光る壺',  capacity: 1, type: 'soul',    desc: '割ると魂片150を得る。' },
-  { id: 'p_heal',     name: '回復の壺',   unknownName: '白い壺',  capacity: 3, type: 'heal',    desc: '使うとHPが大きく回復する。' },
-  { id: 'p_change',   name: '変化の壺',   unknownName: '歪な壺',  capacity: 4, type: 'change',  desc: '入れたアイテムが別のアイテムに変化する。' },
-  { id: 'p_enhance',  name: '強化の壺',   unknownName: '固い壺',  capacity: 3, type: 'enhance', desc: '入れた装備の強化値が階層移動で上がる。' },
-  { id: 'p_weaken',   name: '弱化の壺',   unknownName: '脆い壺',  capacity: 3, type: 'weaken',  desc: '入れた装備の強化値が階層移動で下がる。' },
-  { id: 'p_bottomless',name:'底抜けの壺', unknownName: '軽い壺',  capacity: 3, type: 'bottomless',desc: '入れたアイテムが消滅してしまう。' },
+  { id: 'p_storage',  name: '保管の壺',   unknownName: '丸い壺',  capacity: 5, potType: 'storage', desc: 'アイテムを最大5個収納できる。' },
+  { id: 'p_id',       name: '識別の壺',   unknownName: '細い壺',  capacity: 3, potType: 'identify', desc: '入れたアイテムを識別する。' },
+  { id: 'p_merge',    name: '合成の壺',   unknownName: '重い壺',  capacity: 4, potType: 'merge',   desc: '武器同士・盾同士を合成して強化する。' },
+  { id: 'p_curse',    name: '呪いの壺',   unknownName: '黒い壺',  capacity: 3, potType: 'curse',   desc: '入れたアイテムが呪われる。' },
+  { id: 'p_soul',     name: '魂の壺',     unknownName: '光る壺',  capacity: 1, potType: 'soul',    desc: '割ると魂片150を得る。' },
+  { id: 'p_heal',     name: '回復の壺',   unknownName: '白い壺',  capacity: 3, potType: 'heal',    desc: '使うとHPが大きく回復する。' },
+  { id: 'p_change',   name: '変化の壺',   unknownName: '歪な壺',  capacity: 4, potType: 'change',  desc: '入れたアイテムが別のアイテムに変化する。' },
+  { id: 'p_enhance',  name: '強化の壺',   unknownName: '固い壺',  capacity: 3, potType: 'enhance', desc: '入れた装備の強化値が階層移動で上がる。' },
+  { id: 'p_weaken',   name: '弱化の壺',   unknownName: '脆い壺',  capacity: 3, potType: 'weaken',  desc: '入れた装備の強化値が階層移動で下がる。' },
+  { id: 'p_bottomless',name:'底抜けの壺', unknownName: '軽い壺',  capacity: 3, potType: 'bottomless',desc: '入れたアイテムが消滅してしまう。' },
 ];
 
 // -------------------------------------------------------
@@ -141,6 +141,9 @@ export function getDisplayName(item) {
     if (item.bonus) suffix += `+${item.bonus}`;
     if (item.type === ITEM_TYPE.WEAPON) suffix += ` (攻${item.atk + (item.bonus || 0)})`;
     if (item.type === ITEM_TYPE.ARMOR) suffix += ` (防${item.def + (item.bonus || 0)})`;
+  } else if (item.type === ITEM_TYPE.POT && item.capacity !== undefined) {
+    const current = item.contents ? item.contents.length : 0;
+    suffix += ` [${current}/${item.capacity}]`;
   }
 
   return name + suffix;
@@ -243,56 +246,67 @@ export function useItem(item, player, gameCtx) {
   }
 }
 
-function applyGrassEffect(item, player, gameCtx) {
+export function applyGrassEffect(item, target, gameCtx) {
   const eff = item.effect;
-  const multi = player.blessingEffects?.grassPower ?? 1;
+  const isPlayer = target === gameCtx?.player;
+  const multi = isPlayer ? (target.blessingEffects?.grassPower ?? 1) : 1;
 
   switch (eff.type) {
     case 'heal': {
       const amount = Math.round((eff.amount || 30) * multi);
-      player.hp = Math.min(player.hpMax, player.hp + amount);
-      return `薬草を飲んだ。HP+${amount}。`;
+      if (isPlayer) {
+        target.hp = Math.min(target.hpMax, target.hp + amount);
+      } else {
+        target.hp += amount; // enemies don't have hpMax yet
+      }
+      return isPlayer ? `薬草を飲んだ。HP+${amount}。` : `${target.name}のHPが回復した。`;
     }
     case 'hunger': {
+      if (!isPlayer) return `${target.name}は満腹になったようだ。`;
       const amount = Math.round((eff.amount || 50) * multi);
-      player.hunger = Math.min(player.hungerMax, player.hunger + amount);
+      target.hunger = Math.min(target.hungerMax, target.hunger + amount);
       return `満腹草を飲んだ。満腹度+${amount}。`;
     }
     case 'atk_up': {
+      if (!isPlayer) { target.atk += 3; return `${target.name}の攻撃力が上がった！`; }
       const amount = Math.round((eff.amount || 3) * multi);
-      player.baseAtk += amount;
+      target.baseAtk += amount;
       return `力の草を飲んだ。攻撃力が+${amount}増加した。`;
     }
     case 'hp_max': {
+      if (!isPlayer) { target.hp += 20; return `${target.name}のHPが上がった！`; }
       const amount = Math.round((eff.amount || 20) * multi);
-      player.hpMax += amount;
-      player.hp    += amount;
+      target.hpMax += amount;
+      target.hp    += amount;
       return `竜の血を飲んだ。HP最大値+${amount}。`;
     }
     case 'poison':
-      player.addStatus('poison', eff.duration || 5);
-      return `毒草を飲んだ。毒状態になった。`;
+      if (typeof target.addStatus === 'function') target.addStatus('poison', eff.duration || 5);
+      return isPlayer ? `毒草を飲んだ。毒状態になった。` : `${target.name}は毒状態になった！`;
     case 'sleep':
-      player.addStatus('sleep', eff.duration || 3);
-      return `眠り草を飲んだ。眠ってしまった。`;
+      if (typeof target.addStatus === 'function') target.addStatus('sleep', eff.duration || 3);
+      return isPlayer ? `眠り草を飲んだ。眠ってしまった。` : `${target.name}は眠ってしまった！`;
     case 'identify': {
-      const unid = player.inventory.find(i => !i.identified);
+      if (!isPlayer) return `${target.name}は少し賢くなった気がした。`;
+      const unid = target.inventory.find(i => !i.identified);
       if (unid) { identifyItem(unid.id); unid.identified = true; return `${unid.name}を識別した！`; }
       return '識別できるものがなかった。';
     }
     case 'warp': {
-      const pos = gameCtx.getRandomFloor();
-      player.x = pos.x; player.y = pos.y;
-      return 'ワープした！';
+      if (!gameCtx) return '';
+      const pos = gameCtx._getRandomFloor ? gameCtx._getRandomFloor() : gameCtx.getRandomFloor();
+      target.x = pos.x; target.y = pos.y;
+      return isPlayer ? 'ワープした！' : `${target.name}はワープした！`;
     }
     case 'revive':
-      return '今は何も起きないようだ。（倒れた時に自動で効果が発動する）';
+      return isPlayer ? '今は何も起きないようだ。（倒れた時に自動で効果が発動する）' : `${target.name}には何も起きないようだ。`;
     case 'full_heal': {
-      const hpGain = player.hpMax - player.hp;
-      player.hp = player.hpMax;
+      if (!isPlayer) { target.hp += 100; return `${target.name}のHPが回復した！`; }
+      const hpGain = target.hpMax - target.hp;
+      target.hp = target.hpMax;
       const mGain = eff.amount || 5;
-      player.hpMax += mGain;
-      player.hp += mGain;
+      target.hpMax += mGain;
+      target.hp += mGain;
       return `命の草を飲んだ。HPが全回復し、最大値が+${mGain}された！`;
     }
     default: return '不思議な感覚がした。';
@@ -309,8 +323,12 @@ function applyScrollEffect(item, player, gameCtx) {
       gameCtx.revealMap();
       return 'フロア全体の地図を入手した。';
     case 'curse':
-      if (player.weapon) { player.weapon.cursed = true; return '装備品が呪われた…'; }
-      if (player.armor)  { player.armor.cursed  = true; return '装備品が呪われた…'; }
+      if (player.armor?.special === 'holy_guard') {
+        player.armor.special = null; // 使い捨て
+        return '聖盾アルゴが呪いを防いで輝きを失った！';
+      }
+      if (player.weapon && !player.weapon.cursed) { player.weapon.cursed = true; return '装備品が呪われた…'; }
+      if (player.armor && !player.armor.cursed)  { player.armor.cursed  = true; return '装備品が呪われた…'; }
       return '呪いは空を切った。';
     case 'remove_curse':
       if (player.weapon) player.weapon.cursed = false;

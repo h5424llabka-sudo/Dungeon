@@ -230,11 +230,26 @@ class App {
     this.itemActionModal.innerHTML = `
       <div style="background:var(--panel); padding:20px; border-radius:8px; width:300px; border:1px solid var(--border);">
         <h3 id="item-action-name" style="margin-bottom:10px; color:#fff; text-align:center;">アイテム名</h3>
-        <p id="item-action-desc" style="font-size:14px; margin-bottom:20px; color:#ccc; line-height:1.4;">アイテムの説明がここに入ります。</p>
+        <p id="item-action-desc" style="font-size:14px; margin-bottom:10px; color:#ccc; line-height:1.4;">アイテムの説明がここに入ります。</p>
+        <div id="item-action-contents" style="font-size:13px; margin-bottom:20px; color:#aaa; line-height:1.4; display:none; background:rgba(0,0,0,0.3); padding:8px; border-radius:4px;"></div>
         <div style="display:flex; flex-direction:column; gap:10px;">
           <button id="btn-item-use" class="btn btn-primary">使う</button>
+          <button id="btn-item-put" class="btn btn-primary" style="display:none;">入れる</button>
+          <button id="btn-item-takeout" class="btn btn-primary" style="display:none;">出す</button>
+          <button id="btn-item-throw" class="btn btn-primary" style="display:none;">投げる</button>
+          <button id="btn-item-break" class="btn btn-primary" style="display:none;">割る</button>
           <button id="btn-item-cancel" class="btn btn-secondary">キャンセル</button>
         </div>
+      </div>
+    `;
+
+    // ── 壺アクションモーダル ──────────────────────────────
+    this.potActionModal = el('div', { id: 'modal-pot-action', class: 'screen hidden', style: 'position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center; z-index: 3100;' });
+    this.potActionModal.innerHTML = `
+      <div style="background:var(--panel); padding:20px; border-radius:8px; width:300px; border:1px solid var(--border); max-height:80vh; display:flex; flex-direction:column;">
+        <h3 id="pot-action-title" style="margin-bottom:10px; color:#fff; text-align:center;">タイトル</h3>
+        <div id="pot-item-list" style="overflow-y:auto; flex:1; margin-bottom:10px; display:flex; flex-direction:column; gap:5px;"></div>
+        <button id="btn-pot-cancel" class="btn btn-secondary">キャンセル</button>
       </div>
     `;
 
@@ -244,7 +259,8 @@ class App {
       this.dungeonScreen,
       this.gameOverScreen,
       this.clearScreen,
-      this.itemActionModal
+      this.itemActionModal,
+      this.potActionModal
     );
 
     this._bindEvents();
@@ -274,6 +290,7 @@ class App {
     $('btn-close-bank').onclick = () => { $('modal-bank').classList.add('hidden'); writeSave(this.saveData); };
     $('btn-close-shop').onclick = () => { $('modal-shop').classList.add('hidden'); writeSave(this.saveData); };
     $('btn-item-cancel').onclick = () => { this.itemActionModal.classList.add('hidden'); };
+    $('btn-pot-cancel').onclick = () => { this.potActionModal.classList.add('hidden'); };
     
     // 銀行アクション
     $('btn-bank-deposit').onclick = () => {
@@ -895,16 +912,121 @@ class App {
     $('item-action-name').textContent = getDisplayName(item);
     $('item-action-desc').textContent = item.identified ? (item.desc || '説明がありません。') : '未識別のため効果は不明。';
     
+    const contentsDiv = $('item-action-contents');
+    if (item.type === 'pot' && item.contents && item.contents.length > 0) {
+      let html = '<strong style="color:#fff;">【中身】</strong><br/>';
+      html += item.contents.map((c, i) => `${i+1}. ${getDisplayName(c)}`).join('<br/>');
+      contentsDiv.innerHTML = html;
+      contentsDiv.style.display = 'block';
+    } else {
+      contentsDiv.style.display = 'none';
+    }
+
     const useBtn = $('btn-item-use');
-    useBtn.textContent = isEquip ? '装備する' : '使う';
-    useBtn.onclick = () => {
+    const putBtn = $('btn-item-put');
+    const takeoutBtn = $('btn-item-takeout');
+    const throwBtn = $('btn-item-throw');
+    const breakBtn = $('btn-item-break');
+
+    putBtn.style.display = 'none';
+    takeoutBtn.style.display = 'none';
+    throwBtn.style.display = 'block';
+    breakBtn.style.display = 'none';
+
+    throwBtn.onclick = () => {
       this.itemActionModal.classList.add('hidden');
-      if (isEquip) {
-        this.game.externalEquipItem(index);
-      } else {
-        this.game.externalUseItem(index);
-      }
+      this.game.externalThrowItem(index);
     };
+
+    if (item.type === 'pot') {
+      if (item.potType === 'heal') {
+        useBtn.style.display = 'block';
+        useBtn.textContent = '押す';
+        useBtn.onclick = () => {
+          this.itemActionModal.classList.add('hidden');
+          this.game.externalUseItem(index);
+        };
+      } else {
+        useBtn.style.display = 'none';
+      }
+
+      breakBtn.style.display = 'block';
+      breakBtn.onclick = () => {
+        this.itemActionModal.classList.add('hidden');
+        this.game.externalBreakPot(index);
+      };
+
+      if (!['heal', 'soul'].includes(item.potType)) {
+        if (item.contents && item.contents.length < item.capacity) {
+          putBtn.style.display = 'block';
+          putBtn.onclick = () => {
+            this.itemActionModal.classList.add('hidden');
+            this._showPotPutModal(item, index);
+          };
+        }
+        if (item.potType === 'storage' && item.contents && item.contents.length > 0) {
+          takeoutBtn.style.display = 'block';
+          takeoutBtn.onclick = () => {
+            this.itemActionModal.classList.add('hidden');
+            this._showPotTakeOutModal(item, index);
+          };
+        }
+      }
+    } else {
+      useBtn.style.display = 'block';
+      useBtn.textContent = isEquip ? '装備する' : '使う';
+      useBtn.onclick = () => {
+        this.itemActionModal.classList.add('hidden');
+        if (isEquip) {
+          this.game.externalEquipItem(index);
+        } else {
+          this.game.externalUseItem(index);
+        }
+      };
+    }
+    
+    this.itemActionModal.classList.remove('hidden');
+  }
+
+  _showPotPutModal(potItem, potIndex) {
+    const p = this.game.player;
+    $('pot-action-title').textContent = '入れるアイテムを選択';
+    const list = $('pot-item-list');
+    list.innerHTML = '';
+    let hasItems = false;
+    for (let i = 0; i < p.inventory.length; i++) {
+      if (i === potIndex) continue; // 自分自身は入れられない
+      const item = p.inventory[i];
+      if (item.type === 'pot') continue; // 壺に壺は入れられない（シレンの仕様に準ずる）
+      hasItems = true;
+      const btn = el('button', { class: 'btn btn-secondary', style: 'text-align:left;' });
+      btn.textContent = getDisplayName(item);
+      btn.onclick = () => {
+        this.potActionModal.classList.add('hidden');
+        this.game.externalPutItem(potIndex, i);
+      };
+      list.appendChild(btn);
+    }
+    if (!hasItems) {
+      list.innerHTML = '<div style="color:#999; text-align:center;">入れられるアイテムがありません</div>';
+    }
+    this.potActionModal.classList.remove('hidden');
+  }
+
+  _showPotTakeOutModal(potItem, potIndex) {
+    $('pot-action-title').textContent = '出すアイテムを選択';
+    const list = $('pot-item-list');
+    list.innerHTML = '';
+    potItem.contents.forEach((item, contentIndex) => {
+      const btn = el('button', { class: 'btn btn-secondary', style: 'text-align:left;' });
+      btn.textContent = getDisplayName(item);
+      btn.onclick = () => {
+        this.potActionModal.classList.add('hidden');
+        this.game.externalTakeOutItem(potIndex, contentIndex);
+      };
+      list.appendChild(btn);
+    });
+    this.potActionModal.classList.remove('hidden');
     
     this.itemActionModal.classList.remove('hidden');
   }

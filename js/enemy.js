@@ -284,8 +284,11 @@ export class Enemy {
   // -------------------------------------------------------
   //  ダメージ・状態異常
   // -------------------------------------------------------
-  takeDamage(amount) {
-    const actual = Math.max(1, amount - this.baseDef);
+  takeDamage(dmg, isSwift = false) {
+    if (!isSwift && Math.random() < 0.1) {
+      return 0; // 0 means evaded
+    }
+    const actual = Math.max(1, dmg - this.baseDef);
     this.hp = Math.max(0, this.hp - actual);
     return actual;
   }

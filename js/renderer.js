@@ -316,6 +316,24 @@ export class Renderer {
     const isBoss = enemy.isBoss;
     const color  = isBoss ? COLORS.bossEnemy : COLORS.enemy;
 
+    // 攻撃アニメーションのオフセット
+    let offsetX = 0;
+    let offsetY = 0;
+    if (enemy.attackTarget) {
+      const elapsed = Date.now() - enemy.attackTarget.time;
+      const dur = enemy.attackTarget.duration || 150;
+      if (elapsed < dur) {
+        const progress = elapsed / dur;
+        const peak = Math.sin(progress * Math.PI);
+        const tx = enemy.attackTarget.x - enemy.x;
+        const ty = enemy.attackTarget.y - enemy.y;
+        offsetX = tx * ts * 0.5 * peak;
+        offsetY = ty * ts * 0.5 * peak;
+      }
+    }
+    sx += offsetX;
+    sy += offsetY;
+
     // HP バー
     const hpRatio = enemy.hp / enemy.hpMax;
     ctx.fillStyle = '#330000';
@@ -371,6 +389,24 @@ export class Renderer {
   }
 
   _drawPlayer(ctx, player, sx, sy, ts) {
+    // 攻撃アニメーションのオフセット
+    let offsetX = 0;
+    let offsetY = 0;
+    if (player.attackTarget) {
+      const elapsed = Date.now() - player.attackTarget.time;
+      const dur = player.attackTarget.duration || 150;
+      if (elapsed < dur) {
+        const progress = elapsed / dur;
+        const peak = Math.sin(progress * Math.PI);
+        const tx = player.attackTarget.x - player.x;
+        const ty = player.attackTarget.y - player.y;
+        offsetX = tx * ts * 0.5 * peak;
+        offsetY = ty * ts * 0.5 * peak;
+      }
+    }
+    sx += offsetX;
+    sy += offsetY;
+
     // 影
     ctx.fillStyle = 'rgba(0,0,0,0.4)';
     ctx.beginPath();
@@ -412,6 +448,13 @@ export class Renderer {
       ctx.fillText('🧙', sx + ts/2, sy + ts/2 - 2 + bob);
       ctx.shadowBlur  = 0;
     }
+
+    // 主人公上部の体力バー
+    const hpRatio = player.hp / player.hpMax;
+    ctx.fillStyle = '#330000';
+    ctx.fillRect(sx + 2, sy - 6, ts - 4, 4);
+    ctx.fillStyle = hpRatio > 0.5 ? '#44cc44' : hpRatio > 0.25 ? '#ccaa00' : '#cc2222';
+    ctx.fillRect(sx + 2, sy - 6, Math.floor((ts - 4) * hpRatio), 4);
 
     // 状態異常
     const statuses = Object.keys(player.statuses);

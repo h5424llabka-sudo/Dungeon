@@ -6,7 +6,7 @@ import { TILE, KEYS, DUNGEON_MAX_FLOOR, BOSS_FLOORS, SOUL_PER_FLOOR, SOUL_BOSS_K
 import { Player } from './player.js';
 import { generateFloor, computeFOV, isWalkable } from './dungeon.js';
 import { spawnEnemy } from './enemy.js';
-import { createRandomItem, resetIdentification, addToInventory, canAddToInventory, useItem, equipItem, getDisplayName } from './items.js';
+import { createRandomItem, resetIdentification, addToInventory, canAddToInventory, useItem, equipItem, getDisplayName, identifyItem } from './items.js';
 import { Renderer } from './renderer.js';
 import { addSoulFragments, checkAchievements, writeSave } from './save.js';
 import { getBlessingById } from './gacha.js';
@@ -220,24 +220,28 @@ export class Game {
   async _doPlayerAction(action) {
     if (this.player.hasStatus('sleep')) {
       this.addMessage('眠っていて動けない…');
-      this._endPlayerTurn();
+      await this._endPlayerTurn();
       return;
     }
 
     switch (action.type) {
-      case 'move':    this._actionMove(action.dir);   break;
+      case 'move':    await this._actionMove(action.dir);   break;
       case 'wait':    this.addMessage('待機した。');   break;
       case 'pickup':  this._actionPickup();            break;
-      case 'stairs':  this._actionStairs();            return; // フロア遷移はターン消費後に処理
+      case 'stairs':  await this._actionStairs();            return; // フロア遷移はターン消費後に処理
       case 'use_item':     this._actionUseItem(action.index);   break;
       case 'equip_item':   this._actionEquipItem(action.index); break;
       case 'drop_item':    this._actionDropItem(action.index);  break;
+      case 'put_item':     this._actionPutItem(action.potIndex, action.itemIndex); break;
+      case 'takeout_item': this._actionTakeOutItem(action.potIndex, action.contentIndex); break;
+      case 'throw_item':   await this._actionThrowItem(action.index); break;
+      case 'break_pot':    this._actionBreakPot(action.index); break;
     }
 
-    this._endPlayerTurn();
+    await this._endPlayerTurn();
   }
 
-  _actionMove(dir) {
+  async _actionMove(dir) {
     const { dx, dy } = this._DIR_VECTORS[dir];
     const nx = this.player.x + dx;
     const ny = this.player.y + dy;
@@ -251,7 +255,7 @@ export class Game {
     // 敵への攻撃チェック
     const target = this.enemies.find(e => e.x === nx && e.y === ny && !e.isDead());
     if (target) {
-      this._playerAttack(target);
+      await this._playerAttack(target);
       return;
     }
 
@@ -291,9 +295,25 @@ export class Game {
     this._updateFOV();
   }
 
-  _playerAttack(target) {
-    const { damage, isCrit } = this.player.calcAttack();
-    const actual = target.takeDamage(damage);
+  async _playerAttack(target) {
+    this.player.attackTarget = { x: target.x, y: target.y, time: Date.now(), duration: 150 };
+    let { damage, isCrit } = this.player.calcAttack();
+
+    // 聖剣カルマ特効
+    if (this.player.weapon?.special === 'holy' && (target.id.startsWith('skel') || target.id.startsWith('vamp'))) {
+      damage = Math.floor(damage * 1.5);
+    }
+
+    const isSwift = this.player.weapon?.special === 'swift';
+    const actual = target.takeDamage(damage, isSwift);
+
+    if (actual === 0) {
+      this.addMessage(`${target.name}に避けられた！`);
+      this.renderer.addFloatText(target.x, target.y, 'MISS', '#cccccc');
+      await new Promise(r => setTimeout(r, 150));
+      return;
+    }
+
     const critStr = isCrit ? '【会心！】' : '';
     this.addMessage(`${target.name}に${actual}ダメージ！${critStr}`);
     
@@ -326,6 +346,7 @@ export class Game {
     if (target.isDead()) {
       this._onEnemyKilled(target);
     }
+    await new Promise(r => setTimeout(r, 150));
   }
 
   _onEnemyKilled(enemy) {
@@ -420,10 +441,10 @@ export class Game {
     this.floorItems.splice(idx, 1);
   }
 
-  _actionStairs() {
+  async _actionStairs() {
     if (this.tiles[this.player.y][this.player.x] !== TILE.STAIRS) {
       this.addMessage('ここに階段はない。');
-      this._endPlayerTurn();
+      await this._endPlayerTurn();
       return;
     }
 
@@ -432,7 +453,28 @@ export class Game {
       return;
     }
 
-    this._endPlayerTurn();
+    const msgs = this.player.onTurnEnd(this.floor);
+    msgs.forEach(m => this.addMessage(m));
+    if (this.player.isDead()) {
+      this._gameOver();
+      return;
+    }
+
+    // 強化の壺・弱化の壺の効果
+    for (const item of this.player.inventory) {
+      if (item.type === ITEM_TYPE.POT && item.contents) {
+        if (item.potType === 'enhance') {
+          item.contents.forEach(c => {
+            if (c.type === ITEM_TYPE.WEAPON || c.type === ITEM_TYPE.ARMOR) c.bonus = (c.bonus || 0) + 1;
+          });
+        } else if (item.potType === 'weaken') {
+          item.contents.forEach(c => {
+            if (c.type === ITEM_TYPE.WEAPON || c.type === ITEM_TYPE.ARMOR) c.bonus = (c.bonus || 0) - 1;
+          });
+        }
+      }
+    }
+
     this._loadFloor(this.floor + 1);
   }
 
@@ -449,6 +491,22 @@ export class Game {
 
   externalDropItem(index) {
     this._queueAction({ type: 'drop_item', index });
+  }
+
+  externalPutItem(potIndex, itemIndex) {
+    this._queueAction({ type: 'put_item', potIndex, itemIndex });
+  }
+
+  externalTakeOutItem(potIndex, contentIndex) {
+    this._queueAction({ type: 'takeout_item', potIndex, contentIndex });
+  }
+
+  externalThrowItem(index) {
+    this._queueAction({ type: 'throw_item', index });
+  }
+
+  externalBreakPot(index) {
+    this._queueAction({ type: 'break_pot', index });
   }
 
   _actionUseItem(index) {
@@ -493,13 +551,11 @@ export class Game {
     if ([ITEM_TYPE.GRASS, ITEM_TYPE.SCROLL, ITEM_TYPE.FOOD].includes(item.type)) {
       this.player.inventory.splice(index, 1);
     }
-    this._endPlayerTurn();
   }
 
   _actionEquipItem(index) {
     const msg = equipItem(this.player, index);
     this.addMessage(msg);
-    this._endPlayerTurn();
   }
 
   _actionDropItem(index) {
@@ -518,18 +574,85 @@ export class Game {
     dropItem.y = this.player.y;
     this.floorItems.push(dropItem);
     this.addMessage(`${getDisplayName(dropItem)}を置いた。`);
-    this._endPlayerTurn();
+  }
+
+  _actionPutItem(potIndex, itemIndex) {
+    const pot = this.player.inventory[potIndex];
+    const item = this.player.inventory[itemIndex];
+    if (!pot || !item || pot.type !== ITEM_TYPE.POT) return;
+
+    if (!pot.contents) pot.contents = [];
+    if (pot.contents.length >= pot.capacity) {
+      this.addMessage('壺はもういっぱいだ。');
+      return;
+    }
+
+    pot.contents.push(item);
+    
+    // index補正 (itemIndexがpotIndexより前ならpotIndexがずれることはないが、popで削除されるから気をつける必要はない)
+    // 但し、配列から消すのでspliceを使う。
+    this.player.inventory.splice(itemIndex, 1);
+
+    this.addMessage(`${getDisplayName(item)}を${getDisplayName(pot)}に入れた。`);
+
+    if (pot.potType === 'identify') {
+      identifyItem(item.id);
+      item.identified = true;
+      this.addMessage(`${getDisplayName(item)}を識別した！`);
+    } else if (pot.potType === 'bottomless') {
+      pot.contents.pop(); // 消滅
+      this.addMessage(`${getDisplayName(item)}は消滅してしまった…`);
+    } else if (pot.potType === 'curse') {
+      if (this.player.armor?.special === 'holy_guard') {
+        this.player.armor.special = null;
+        this.addMessage('聖盾アルゴが呪いを防いで輝きを失った！');
+      } else {
+        item.cursed = true;
+        this.addMessage(`${getDisplayName(item)}は呪われてしまった！`);
+      }
+    } else if (pot.potType === 'merge') {
+      // 合成処理
+      const bases = pot.contents.filter(c => c !== item);
+      const base = bases.length > 0 ? bases[bases.length - 1] : null;
+      if (base && base.type === item.type && (base.type === ITEM_TYPE.WEAPON || base.type === ITEM_TYPE.ARMOR)) {
+        base.bonus = (base.bonus || 0) + (item.bonus || 0);
+        pot.contents.pop(); // 合成素材を消去
+        this.addMessage(`${base.name}の強化値が吸収された！`);
+      }
+    } else if (pot.potType === 'change') {
+      // 変化処理
+      const newItem = createRandomItem(this.floor);
+      if (newItem) {
+        pot.contents.pop();
+        pot.contents.push(newItem);
+        this.addMessage(`入れたアイテムが別のものに変化した！`);
+      }
+    }
+  }
+
+  _actionTakeOutItem(potIndex, contentIndex) {
+    const pot = this.player.inventory[potIndex];
+    if (!pot || pot.type !== ITEM_TYPE.POT || pot.potType !== 'storage') return;
+
+    if (!canAddToInventory(this.player)) {
+      this.addMessage('持ち物がいっぱいだ。');
+      return;
+    }
+
+    const item = pot.contents.splice(contentIndex, 1)[0];
+    addToInventory(this.player, item);
+    this.addMessage(`${getDisplayName(pot)}から${getDisplayName(item)}を取り出した。`);
   }
 
   // -------------------------------------------------------
   //  敵ターン処理
   // -------------------------------------------------------
-  _enemyTurn() {
+  async _enemyTurn() {
     for (const enemy of this.enemies) {
       if (enemy.isDead()) continue;
 
       const action = enemy.decideAction(this.player, this.tiles, this.enemies, this.floorData?.rooms);
-      this._resolveEnemyAction(enemy, action);
+      await this._resolveEnemyAction(enemy, action);
 
       // プレイヤーが死んでいたら即終了
       if (this.player.isDead()) {
@@ -541,7 +664,7 @@ export class Game {
     this.enemies = this.enemies.filter(e => !e.isDead());
   }
 
-  _resolveEnemyAction(enemy, action) {
+  async _resolveEnemyAction(enemy, action) {
     switch (action.type) {
       case 'move':
         const dx = action.nx - enemy.x;
@@ -559,6 +682,7 @@ export class Game {
       case 'double_attack': {
         const times = action.type === 'double_attack' ? 2 : 1;
         for (let i = 0; i < times; i++) {
+          enemy.attackTarget = { x: this.player.x, y: this.player.y, time: Date.now(), duration: 150 };
           const { damage, isCrit } = enemy.calcAttack();
           const { actual, deathResist, evaded } = this.player.takeDamage(damage);
           if (evaded) {
@@ -569,11 +693,22 @@ export class Game {
           this.addMessage(`${enemy.name}の攻撃！ ${actual}ダメージ。${critStr}`);
           this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
           if (deathResist) this.addMessage('不屈の魂が発動！HP1で耐えた！', '#ffd700');
+
+          if (this.player.armor?.special === 'thorns') {
+            const reflectActual = enemy.takeDamage(2, true);
+            if (reflectActual > 0) {
+              this.addMessage(`${enemy.name}に茨のダメージ！`);
+              this.renderer.addFloatText(enemy.x, enemy.y, reflectActual.toString(), '#ffffff');
+            }
+          }
+
+          await new Promise(r => setTimeout(r, 150));
         }
         break;
       }
 
       case 'poison_attack': {
+        enemy.attackTarget = { x: this.player.x, y: this.player.y, time: Date.now(), duration: 150 };
         const { damage } = enemy.calcAttack();
         const { actual, evaded } = this.player.takeDamage(damage);
         if (evaded) {
@@ -583,14 +718,16 @@ export class Game {
         this.player.addStatus('poison', action.duration);
         this.addMessage(`${enemy.name}の毒攻撃！ ${actual}ダメージ。毒になった。`);
         this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
+        await new Promise(r => setTimeout(r, 150));
         break;
       }
 
       case 'magic_bolt': {
+        enemy.attackTarget = { x: this.player.x, y: this.player.y, time: Date.now(), duration: 150 };
         const actual = Math.max(1, action.dmg - this.player.def);
         // 反射チェック
         if (this.player.armor?.special === 'reflect' && Math.random() < 0.15) {
-          const reflected = enemy.takeDamage(action.dmg);
+          const reflected = enemy.takeDamage(action.dmg, true);
           this.addMessage(`魔法が反射した！ ${enemy.name}に${reflected}ダメージ！`);
           this.renderer.addFloatText(enemy.x, enemy.y, reflected.toString(), '#ffffff');
         } else {
@@ -598,6 +735,7 @@ export class Game {
           this.addMessage(`${enemy.name}の魔法弾！ ${actual}ダメージ。`);
           this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
         }
+        await new Promise(r => setTimeout(r, 150));
         break;
       }
 
@@ -628,12 +766,14 @@ export class Game {
       }
 
       case 'life_drain': {
+        enemy.attackTarget = { x: this.player.x, y: this.player.y, time: Date.now(), duration: 150 };
         const { damage } = enemy.calcAttack();
         const { actual } = this.player.takeDamage(damage);
         enemy.hp = Math.min(enemy.hpMax, enemy.hp + Math.floor(actual / 2));
         this.addMessage(`${enemy.name}の生命吸収！ ${actual}ダメージ。`);
         this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
         this.renderer.addFloatText(enemy.x, enemy.y, `+${Math.floor(actual / 2)}`, '#44ff44');
+        await new Promise(r => setTimeout(r, 150));
         break;
       }
 
@@ -670,12 +810,14 @@ export class Game {
       }
 
       case 'chaos_aura': {
+        enemy.attackTarget = { x: this.player.x, y: this.player.y, time: Date.now(), duration: 150 };
         const { damage } = enemy.calcAttack();
         const { actual } = this.player.takeDamage(Math.floor(damage * 1.3));
         this.player.addStatus('poison', 3);
         this.player.hunger = Math.max(0, this.player.hunger - 20);
         this.addMessage(`混沌の王の混沌オーラ！ ${actual}ダメージ！毒・空腹！`, '#ff0044');
         this.renderer.addFloatText(this.player.x, this.player.y, actual.toString(), '#ff4444');
+        await new Promise(r => setTimeout(r, 150));
         break;
       }
     }
@@ -684,7 +826,7 @@ export class Game {
   // -------------------------------------------------------
   //  ターン終了処理
   // -------------------------------------------------------
-  _endPlayerTurn() {
+  async _endPlayerTurn() {
     // 死の刻印チェック
     if (this.player.statuses.death_mark === 1) {
       this.addMessage('死の刻印が発動！ 即死した！', '#ff0000');
@@ -702,7 +844,7 @@ export class Game {
     }
 
     // 敵ターン
-    this._enemyTurn();
+    await this._enemyTurn();
   }
 
   // -------------------------------------------------------
@@ -827,4 +969,6 @@ export class Game {
   externalUseItem(index)   { this._queueAction({ type: 'use_item',   index }); }
   externalEquipItem(index) { this._queueAction({ type: 'equip_item', index }); }
   externalDropItem(index)  { this._queueAction({ type: 'drop_item',  index }); }
+  externalPutItem(potIndex, itemIndex) { this._queueAction({ type: 'put_item', potIndex, itemIndex }); }
+  externalTakeOutItem(potIndex, contentIndex) { this._queueAction({ type: 'takeout_item', potIndex, contentIndex }); }
 }

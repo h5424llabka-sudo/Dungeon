@@ -163,6 +163,16 @@ export class Player {
     this.exp += amount;
     const msgs = [];
 
+    // 成長の盾
+    if (this.armor && this.armor.special === 'growth') {
+      this.armor._growthExp = (this.armor._growthExp || 0) + amount;
+      while (this.armor._growthExp >= 50) {
+        this.armor._growthExp -= 50;
+        this.armor.bonus = (this.armor.bonus || 0) + 1;
+        msgs.push(`${this.armor.name}が成長し、強化値が+1された！`);
+      }
+    }
+
     while (this.level < EXP_TABLE.length - 1 &&
            this.exp >= EXP_TABLE[this.level]) {
       this.level++;
